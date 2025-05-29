@@ -1,12 +1,403 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="google-site-verification" content="g_Tlli9QAu0hUR5v0g_ZRC5tUvVzKpTp0x1aXgy33pU" />
-    <meta charset="UTF-8" />
-    <title>App Ads TXT</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meecro - Privacy Policies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #f0f8ff;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding-bottom: 60px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            padding: 30px 0;
+            text-align: center;
+            background: rgba(16, 22, 58, 0.7);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(64, 224, 208, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+        
+        .logo-icon {
+            background: linear-gradient(135deg, #00c6fb, #005bea);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            box-shadow: 0 5px 15px rgba(0, 91, 234, 0.4);
+        }
+        
+        .logo-icon i {
+            font-size: 24px;
+        }
+        
+        .logo-text {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #00c6fb, #005bea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 1px;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            color: #a0d2eb;
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+        
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(32, 58, 67, 0.4) 0%, rgba(15, 32, 39, 0) 70%);
+            z-index: -1;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: #c3e7ff;
+        }
+        
+        .divider {
+            height: 3px;
+            width: 100px;
+            background: linear-gradient(to right, #00c6fb, #005bea);
+            margin: 30px auto;
+            border-radius: 3px;
+        }
+        
+        /* Apps Section */
+        .apps-section {
+            padding: 40px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 4px;
+            background: linear-gradient(to right, #00c6fb, #005bea);
+            border-radius: 2px;
+        }
+        
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+        
+        .app-card {
+            background: rgba(19, 38, 74, 0.6);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(64, 224, 208, 0.2);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .app-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 91, 234, 0.3);
+            border-color: rgba(64, 224, 208, 0.4);
+        }
+        
+        .app-icon {
+            height: 180px;
+            background: linear-gradient(135deg, #1d2b64, #1d2b64);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .app-icon i {
+            font-size: 70px;
+            color: #40e0d0;
+            z-index: 2;
+        }
+        
+        .app-icon::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(-25deg) translateY(-50px);
+            z-index: 1;
+        }
+        
+        .app-info {
+            padding: 25px;
+        }
+        
+        .app-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #40e0d0;
+        }
+        
+        .app-info p {
+            color: #a0d2eb;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            min-height: 70px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(to right, #00c6fb, #005bea);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            box-shadow: 0 5px 15px rgba(0, 91, 234, 0.4);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 91, 234, 0.6);
+        }
+        
+        .btn i {
+            margin-left: 8px;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background: rgba(16, 22, 58, 0.4);
+            margin: 60px 0;
+            border-top: 1px solid rgba(64, 224, 208, 0.2);
+            border-bottom: 1px solid rgba(64, 224, 208, 0.2);
+        }
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .about-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            color: #40e0d0;
+        }
+        
+        .about-content p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            color: #c3e7ff;
+            line-height: 1.8;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 60px;
+            color: #a0d2eb;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(64, 224, 208, 0.1);
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 20px 0;
+        }
+        
+        .footer-links a {
+            color: #40e0d0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #00c6fb;
+            text-decoration: underline;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .logo-text {
+                font-size: 2rem;
+            }
+            
+            .apps-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>This site hosts the app-ads.txt file.</h1>
-    <p>Go to <a href="/app-ads.txt">app-ads.txt</a> to see the file.</p>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <div class="logo-text">Meecro</div>
+            </div>
+            <p class="tagline">Transparent privacy policies for all our applications</p>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Your Privacy Matters</h1>
+            <p>At Meecro, we believe in transparency and protecting your personal information. Explore the privacy policies for our applications below.</p>
+            <div class="divider"></div>
+        </div>
+    </section>
+
+    <section class="apps-section">
+        <div class="container">
+            <h2 class="section-title">Our Applications</h2>
+            <div class="apps-grid">
+                <!-- App 1 -->
+                <div class="app-card">
+                    <div class="app-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <div class="app-info">
+                        <h3>FinCalc Pro</h3>
+                        <p>A powerful financial calculator for personal budgeting, investment planning, and currency conversion.</p>
+                        <a href="#" class="btn">View Privacy Policy <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- App 2 -->
+                <div class="app-card">
+                    <div class="app-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <div class="app-info">
+                        <h3>TaskFlow</h3>
+                        <p>Productivity app that helps you organize tasks, set reminders, and collaborate with your team.</p>
+                        <a href="#" class="btn">View Privacy Policy <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- App 3 -->
+                <div class="app-card">
+                    <div class="app-icon">
+                        <i class="fas fa-cloud-sun"></i>
+                    </div>
+                    <div class="app-info">
+                        <h3>WeatherScope</h3>
+                        <p>Hyperlocal weather forecasts with real-time alerts and beautiful weather visualizations.</p>
+                        <a href="#" class="btn">View Privacy Policy <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <h2>Our Privacy Commitment</h2>
+                <p>At Meecro, we take your privacy seriously. Our applications are designed with privacy as a core principle, not an afterthought. We collect only the essential information required to provide you with the best possible experience.</p>
+                <p>All our privacy policies are written in clear, understandable language. We never sell your data to third parties, and we implement industry-standard security measures to protect your information.</p>
+                <p>If you have any questions about how we handle your data, please don't hesitate to contact our privacy team.</p>
+                <a href="mailto:privacy@meecro.dev" class="btn">Contact Privacy Team</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact Us</a>
+                <a href="#">GitHub</a>
+                <a href="#">Developer Portal</a>
+            </div>
+            <p>&copy; 2023 Meecro Development. All rights reserved.</p>
+            <p>Transparency • Security • Trust</p>
+        </div>
+    </footer>
 </body>
 </html>
