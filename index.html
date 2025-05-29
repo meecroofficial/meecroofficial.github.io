@@ -3,22 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meecro - Privacy Policies</title>
+    <title>QRCraft by Meecro - Privacy Policy</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #1a237e;
+            --secondary: #00b0ff;
+            --accent: #76ff03;
+            --dark: #0d1b2a;
+            --light: #e0f7fa;
+            --gray: #90a4ae;
         }
         
         body {
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            color: #f0f8ff;
+            background: linear-gradient(135deg, #0d1b2a, #1b263b);
+            color: var(--light);
+            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
             min-height: 100vh;
-            padding-bottom: 60px;
+            overflow-x: hidden;
         }
         
         .container {
@@ -27,193 +37,383 @@
             padding: 0 20px;
         }
         
+        /* QR Pattern Background */
+        .qr-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(118, 255, 3, 0.05) 0%, transparent 10%),
+                radial-gradient(circle at 90% 80%, rgba(118, 255, 3, 0.05) 0%, transparent 10%),
+                radial-gradient(circle at 50% 50%, rgba(118, 255, 3, 0.05) 0%, transparent 20%);
+            background-size: 120px 120px;
+            z-index: -1;
+            opacity: 0.3;
+        }
+        
         /* Header Styles */
         header {
-            padding: 30px 0;
-            text-align: center;
-            background: rgba(16, 22, 58, 0.7);
+            padding: 25px 0;
+            background: rgba(13, 27, 42, 0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(64, 224, 208, 0.3);
+            border-bottom: 1px solid rgba(0, 176, 255, 0.2);
             position: sticky;
             top: 0;
             z-index: 100;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
         .logo {
             display: flex;
             align-items: center;
-            justify-content: center;
-            margin-bottom: 15px;
+            gap: 15px;
         }
         
         .logo-icon {
-            background: linear-gradient(135deg, #00c6fb, #005bea);
+            background: var(--primary);
             width: 50px;
             height: 50px;
-            border-radius: 50%;
+            border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 15px;
-            box-shadow: 0 5px 15px rgba(0, 91, 234, 0.4);
+            box-shadow: 0 5px 15px rgba(26, 35, 126, 0.5);
         }
         
         .logo-icon i {
             font-size: 24px;
+            color: var(--accent);
         }
         
         .logo-text {
-            font-size: 2.5rem;
+            font-size: 1.8rem;
             font-weight: 700;
-            background: linear-gradient(to right, #00c6fb, #005bea);
+            background: linear-gradient(to right, var(--secondary), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             letter-spacing: 1px;
         }
         
-        .tagline {
-            font-size: 1.2rem;
-            color: #a0d2eb;
-            max-width: 600px;
-            margin: 0 auto;
+        .dev-name {
+            font-size: 1rem;
+            color: var(--gray);
             font-weight: 300;
+            font-family: 'Roboto Mono', monospace;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        nav a {
+            color: var(--light);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        nav a:hover {
+            background: rgba(0, 176, 255, 0.2);
+            color: var(--secondary);
         }
         
         /* Hero Section */
         .hero {
+            padding: 100px 0 70px;
             text-align: center;
-            padding: 60px 0;
             position: relative;
-            overflow: hidden;
         }
         
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(32, 58, 67, 0.4) 0%, rgba(15, 32, 39, 0) 70%);
-            z-index: -1;
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .app-icon-large {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, var(--primary), #283593);
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            border: 2px solid rgba(118, 255, 3, 0.3);
+        }
+        
+        .app-icon-large i {
+            font-size: 60px;
+            color: var(--accent);
         }
         
         .hero h1 {
-            font-size: 3rem;
+            font-size: 3.2rem;
             margin-bottom: 20px;
             font-weight: 700;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         
         .hero p {
             font-size: 1.3rem;
-            max-width: 800px;
+            max-width: 700px;
             margin: 0 auto 30px;
             color: #c3e7ff;
         }
         
         .divider {
-            height: 3px;
-            width: 100px;
-            background: linear-gradient(to right, #00c6fb, #005bea);
-            margin: 30px auto;
-            border-radius: 3px;
-        }
-        
-        /* Apps Section */
-        .apps-section {
-            padding: 40px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: 2.2rem;
-            margin-bottom: 50px;
-            position: relative;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 70px;
             height: 4px;
-            background: linear-gradient(to right, #00c6fb, #005bea);
+            width: 120px;
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+            margin: 40px auto;
             border-radius: 2px;
         }
         
-        .apps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            padding: 20px;
+        /* App Section */
+        .app-section {
+            padding: 70px 0;
         }
         
         .app-card {
             background: rgba(19, 38, 74, 0.6);
-            border-radius: 15px;
+            border-radius: 25px;
             overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid rgba(64, 224, 208, 0.2);
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
             backdrop-filter: blur(10px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(0, 176, 255, 0.3);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
         }
         
         .app-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0, 91, 234, 0.3);
-            border-color: rgba(64, 224, 208, 0.4);
+            border-color: var(--accent);
         }
         
-        .app-icon {
-            height: 180px;
+        .app-details {
+            padding: 40px;
+            flex: 1;
+        }
+        
+        .app-details h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        
+        .app-details .app-description {
+            font-size: 1.1rem;
+            color: #a0d2eb;
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+        
+        .features {
+            margin: 30px 0;
+        }
+        
+        .features h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .features ul {
+            padding-left: 25px;
+        }
+        
+        .features li {
+            margin-bottom: 12px;
+            position: relative;
+        }
+        
+        .features li::before {
+            content: "■";
+            color: var(--accent);
+            position: absolute;
+            left: -25px;
+            font-size: 0.8rem;
+        }
+        
+        .app-image {
+            flex: 1;
             background: linear-gradient(135deg, #1d2b64, #1d2b64);
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 30px;
             position: relative;
             overflow: hidden;
         }
         
-        .app-icon i {
-            font-size: 70px;
-            color: #40e0d0;
-            z-index: 2;
-        }
-        
-        .app-icon::before {
+        .app-image::before {
             content: '';
             position: absolute;
-            width: 150%;
-            height: 50px;
+            width: 200%;
+            height: 60px;
             background: rgba(255, 255, 255, 0.1);
             transform: rotate(-25deg) translateY(-50px);
             z-index: 1;
         }
         
-        .app-info {
-            padding: 25px;
+        .qr-visual {
+            width: 200px;
+            height: 200px;
+            background: #fff;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
         
-        .app-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            color: #40e0d0;
+        .qr-visual::before,
+        .qr-visual::after {
+            content: '';
+            position: absolute;
+            background: #000;
         }
         
-        .app-info p {
-            color: #a0d2eb;
+        /* Simulate QR pattern */
+        .qr-visual::before {
+            width: 40px;
+            height: 40px;
+            top: 20px;
+            left: 20px;
+            border: 5px solid #fff;
+            border-radius: 10px;
+        }
+        
+        .qr-visual::after {
+            width: 10px;
+            height: 140px;
+            top: 30px;
+            left: 80px;
+            box-shadow: 
+                30px 0 0 #000,
+                60px 0 0 #000,
+                90px 0 0 #000,
+                0 30px 0 #000,
+                0 60px 0 #000,
+                0 90px 0 #000,
+                30px 30px 0 #000,
+                60px 30px 0 #000,
+                90px 30px 0 #000,
+                30px 60px 0 #000,
+                60px 60px 0 #000,
+                90px 60px 0 #000;
+        }
+        
+        /* Privacy Section */
+        .privacy-section {
+            padding: 80px 0;
+            background: rgba(16, 22, 58, 0.4);
+            border-top: 1px solid rgba(0, 176, 255, 0.2);
+            border-bottom: 1px solid rgba(0, 176, 255, 0.2);
+        }
+        
+        .privacy-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .privacy-content h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--secondary);
+            position: relative;
+        }
+        
+        .privacy-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+            border-radius: 2px;
+        }
+        
+        .privacy-box {
+            background: rgba(13, 27, 42, 0.8);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-left: 4px solid var(--accent);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .privacy-box h3 {
+            font-size: 1.6rem;
             margin-bottom: 20px;
-            font-size: 0.95rem;
-            min-height: 70px;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         
+        .privacy-box h3 i {
+            color: var(--secondary);
+        }
+        
+        .privacy-box p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            color: #c3e7ff;
+        }
+        
+        .privacy-box ul {
+            padding-left: 25px;
+            margin: 20px 0;
+        }
+        
+        .privacy-box li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .privacy-box li::before {
+            content: "▹";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+        }
+        
+        .policy-actions {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        /* Buttons */
         .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background: linear-gradient(to right, #00c6fb, #005bea);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 35px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
             color: white;
             text-decoration: none;
             border-radius: 50px;
@@ -221,182 +421,249 @@
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
-            font-size: 1rem;
+            font-size: 1.1rem;
             letter-spacing: 0.5px;
             box-shadow: 0 5px 15px rgba(0, 91, 234, 0.4);
         }
         
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 91, 234, 0.6);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 176, 255, 0.6);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+        }
+        
+        .btn-outline:hover {
+            background: rgba(0, 176, 255, 0.1);
         }
         
         .btn i {
-            margin-left: 8px;
-        }
-        
-        /* About Section */
-        .about {
-            padding: 80px 0;
-            background: rgba(16, 22, 58, 0.4);
-            margin: 60px 0;
-            border-top: 1px solid rgba(64, 224, 208, 0.2);
-            border-bottom: 1px solid rgba(64, 224, 208, 0.2);
-        }
-        
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .about-content h2 {
-            font-size: 2.5rem;
-            margin-bottom: 25px;
-            color: #40e0d0;
-        }
-        
-        .about-content p {
-            font-size: 1.1rem;
-            margin-bottom: 25px;
-            color: #c3e7ff;
-            line-height: 1.8;
+            font-size: 1.2rem;
         }
         
         /* Footer */
         footer {
             text-align: center;
-            padding: 30px 0;
-            margin-top: 60px;
-            color: #a0d2eb;
-            font-size: 0.9rem;
-            border-top: 1px solid rgba(64, 224, 208, 0.1);
+            padding: 60px 0 40px;
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+        
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         
         .footer-links {
             display: flex;
             justify-content: center;
-            gap: 25px;
-            margin: 20px 0;
+            gap: 30px;
+            margin: 30px 0;
+            flex-wrap: wrap;
         }
         
         .footer-links a {
-            color: #40e0d0;
+            color: var(--light);
             text-decoration: none;
             transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
         
         .footer-links a:hover {
-            color: #00c6fb;
-            text-decoration: underline;
+            color: var(--secondary);
+        }
+        
+        .copyright {
+            margin-top: 30px;
+            font-size: 0.9rem;
         }
         
         /* Responsive Design */
+        @media (max-width: 900px) {
+            .app-card {
+                flex-direction: column;
+            }
+            
+            .app-image {
+                min-height: 300px;
+            }
+        }
+        
         @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
             .hero h1 {
-                font-size: 2.3rem;
+                font-size: 2.5rem;
             }
             
             .hero p {
                 font-size: 1.1rem;
             }
             
-            .logo-text {
+            .app-details h2 {
                 font-size: 2rem;
-            }
-            
-            .apps-grid {
-                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
+    <div class="qr-pattern"></div>
+    
     <header>
         <div class="container">
-            <div class="logo">
-                <div class="logo-icon">
-                    <i class="fas fa-user-shield"></i>
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-qrcode"></i>
+                    </div>
+                    <div>
+                        <div class="logo-text">QRCraft</div>
+                        <div class="dev-name">by Meecro Development</div>
+                    </div>
                 </div>
-                <div class="logo-text">Meecro</div>
+                
+                <nav>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="#app"><i class="fas fa-mobile-alt"></i> App</a></li>
+                        <li><a href="#privacy"><i class="fas fa-user-shield"></i> Privacy</a></li>
+                        <li><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
+                    </ul>
+                </nav>
             </div>
-            <p class="tagline">Transparent privacy policies for all our applications</p>
         </div>
     </header>
 
     <section class="hero">
         <div class="container">
-            <h1>Your Privacy Matters</h1>
-            <p>At Meecro, we believe in transparency and protecting your personal information. Explore the privacy policies for our applications below.</p>
-            <div class="divider"></div>
+            <div class="hero-content">
+                <div class="app-icon-large">
+                    <i class="fas fa-qrcode"></i>
+                </div>
+                <h1>Privacy First. Always.</h1>
+                <p>At Meecro, we believe your data belongs to you. Explore our transparent privacy policy for QRCraft - the ultimate QR and barcode solution.</p>
+                <div class="divider"></div>
+            </div>
         </div>
     </section>
 
-    <section class="apps-section">
+    <section id="app" class="app-section">
         <div class="container">
-            <h2 class="section-title">Our Applications</h2>
-            <div class="apps-grid">
-                <!-- App 1 -->
-                <div class="app-card">
-                    <div class="app-icon">
-                        <i class="fas fa-calculator"></i>
+            <div class="app-card">
+                <div class="app-details">
+                    <h2>QRCraft</h2>
+                    <p class="app-description">The ultimate tool for generating and scanning QR codes and barcodes. Fast, reliable, and completely private.</p>
+                    
+                    <div class="features">
+                        <h3><i class="fas fa-star"></i> Key Features</h3>
+                        <ul>
+                            <li>Generate custom QR codes in seconds</li>
+                            <li>Scan all common barcode formats</li>
+                            <li>Create contact cards, WiFi access, and more</li>
+                            <li>History of scanned codes with export option</li>
+                            <li>No ads, no tracking, no nonsense</li>
+                        </ul>
                     </div>
-                    <div class="app-info">
-                        <h3>FinCalc Pro</h3>
-                        <p>A powerful financial calculator for personal budgeting, investment planning, and currency conversion.</p>
-                        <a href="#" class="btn">View Privacy Policy <i class="fas fa-arrow-right"></i></a>
-                    </div>
+                    
+                    <a href="#" class="btn"><i class="fas fa-download"></i> Download Now</a>
                 </div>
                 
-                <!-- App 2 -->
-                <div class="app-card">
-                    <div class="app-icon">
-                        <i class="fas fa-tasks"></i>
-                    </div>
-                    <div class="app-info">
-                        <h3>TaskFlow</h3>
-                        <p>Productivity app that helps you organize tasks, set reminders, and collaborate with your team.</p>
-                        <a href="#" class="btn">View Privacy Policy <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                
-                <!-- App 3 -->
-                <div class="app-card">
-                    <div class="app-icon">
-                        <i class="fas fa-cloud-sun"></i>
-                    </div>
-                    <div class="app-info">
-                        <h3>WeatherScope</h3>
-                        <p>Hyperlocal weather forecasts with real-time alerts and beautiful weather visualizations.</p>
-                        <a href="#" class="btn">View Privacy Policy <i class="fas fa-arrow-right"></i></a>
-                    </div>
+                <div class="app-image">
+                    <div class="qr-visual"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="about">
+    <section id="privacy" class="privacy-section">
         <div class="container">
-            <div class="about-content">
-                <h2>Our Privacy Commitment</h2>
-                <p>At Meecro, we take your privacy seriously. Our applications are designed with privacy as a core principle, not an afterthought. We collect only the essential information required to provide you with the best possible experience.</p>
-                <p>All our privacy policies are written in clear, understandable language. We never sell your data to third parties, and we implement industry-standard security measures to protect your information.</p>
-                <p>If you have any questions about how we handle your data, please don't hesitate to contact our privacy team.</p>
-                <a href="mailto:privacy@meecro.dev" class="btn">Contact Privacy Team</a>
+            <div class="privacy-content">
+                <h2>Privacy Policy</h2>
+                
+                <div class="privacy-box">
+                    <h3><i class="fas fa-shield-alt"></i> Data Collection</h3>
+                    <p>QRCraft is designed with privacy as a fundamental principle. We do not collect, store, or transmit any personal information.</p>
+                    <p>The app requires the following permissions:</p>
+                    <ul>
+                        <li><strong>Camera Access</strong> - Required for scanning QR codes and barcodes. We never store images or video from your camera.</li>
+                        <li><strong>Photo Library Access</strong> - Optional permission to scan QR codes from your existing photos.</li>
+                    </ul>
+                    <p>All processing happens locally on your device. No data ever leaves your phone.</p>
+                </div>
+                
+                <div class="privacy-box">
+                    <h3><i class="fas fa-lock"></i> Data Security</h3>
+                    <p>We implement industry-standard security measures to protect any data generated within the app:</p>
+                    <ul>
+                        <li>All generated QR codes are stored only on your device</li>
+                        <li>Scan history is encrypted and never synced to cloud services</li>
+                        <li>No third-party analytics or tracking frameworks</li>
+                        <li>No advertisements or data monetization</li>
+                    </ul>
+                    <p>When you delete history items, they are immediately and permanently removed.</p>
+                </div>
+                
+                <div class="privacy-box">
+                    <h3><i class="fas fa-sync-alt"></i> Data Sharing</h3>
+                    <p>QRCraft does not share any data with third parties. The only exceptions are:</p>
+                    <ul>
+                        <li>When you explicitly choose to share a generated QR code</li>
+                        <li>When you export your scan history (you control what is exported)</li>
+                    </ul>
+                    <p>We do not use any third-party SDKs that might collect data without your knowledge.</p>
+                </div>
+                
+                <div class="privacy-box">
+                    <h3><i class="fas fa-question-circle"></i> Your Rights</h3>
+                    <p>As a QRCraft user, you have full control over your data:</p>
+                    <ul>
+                        <li>Access all data stored by the app through the History section</li>
+                        <li>Delete individual items or clear entire history at any time</li>
+                        <li>Export your data in CSV format for your records</li>
+                        <li>Completely disable history storage in Settings</li>
+                    </ul>
+                    <p>Since we don't collect personal data, there's no need for data subject requests.</p>
+                </div>
+                
+                <div class="policy-actions">
+                    <a href="#" class="btn"><i class="fas fa-file-pdf"></i> Download Full Policy (PDF)</a>
+                    <a href="#" class="btn btn-outline"><i class="fas fa-envelope"></i> Contact Privacy Team</a>
+                </div>
             </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
+            <div class="footer-logo">Meecro</div>
+            <p>Transparent development for privacy-conscious users</p>
+            
             <div class="footer-links">
-                <a href="#">Terms of Service</a>
-                <a href="#">Contact Us</a>
-                <a href="#">GitHub</a>
-                <a href="#">Developer Portal</a>
+                <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                <a href="#"><i class="fas fa-envelope"></i> Contact</a>
+                <a href="#"><i class="fas fa-globe"></i> Website</a>
+                <a href="#"><i class="fas fa-file-alt"></i> Terms of Service</a>
             </div>
-            <p>&copy; 2023 Meecro Development. All rights reserved.</p>
-            <p>Transparency • Security • Trust</p>
+            
+            <p class="copyright">© 2023 Meecro Development. All rights reserved.<br>QRCraft and all related content are properties of Meecro.</p>
         </div>
     </footer>
 </body>
