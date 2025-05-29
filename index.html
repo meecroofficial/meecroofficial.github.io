@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QRCraft by Meecro - Privacy Policy</title>
+    <title>Meecro - Privacy Policies</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -14,16 +14,18 @@
         }
         
         :root {
-            --primary: #1a237e;
-            --secondary: #00b0ff;
-            --accent: #76ff03;
-            --dark: #0d1b2a;
-            --light: #e0f7fa;
-            --gray: #90a4ae;
+            --primary: #2563eb;
+            --secondary: #0ea5e9;
+            --accent: #8b5cf6;
+            --dark: #0f172a;
+            --light: #f1f5f9;
+            --gray: #94a3b8;
+            --card-bg: rgba(15, 23, 42, 0.85);
+            --transition: all 0.3s ease;
         }
         
         body {
-            background: linear-gradient(135deg, #0d1b2a, #1b263b);
+            background: linear-gradient(135deg, #0f172a, #1e293b);
             color: var(--light);
             font-family: 'Poppins', sans-serif;
             line-height: 1.6;
@@ -37,28 +39,12 @@
             padding: 0 20px;
         }
         
-        /* QR Pattern Background */
-        .qr-pattern {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(118, 255, 3, 0.05) 0%, transparent 10%),
-                radial-gradient(circle at 90% 80%, rgba(118, 255, 3, 0.05) 0%, transparent 10%),
-                radial-gradient(circle at 50% 50%, rgba(118, 255, 3, 0.05) 0%, transparent 20%);
-            background-size: 120px 120px;
-            z-index: -1;
-            opacity: 0.3;
-        }
-        
         /* Header Styles */
         header {
-            padding: 25px 0;
-            background: rgba(13, 27, 42, 0.95);
+            padding: 20px 0;
+            background: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0, 176, 255, 0.2);
+            border-bottom: 1px solid rgba(37, 99, 235, 0.2);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -85,28 +71,21 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 5px 15px rgba(26, 35, 126, 0.5);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.5);
         }
         
         .logo-icon i {
             font-size: 24px;
-            color: var(--accent);
+            color: white;
         }
         
         .logo-text {
             font-size: 1.8rem;
             font-weight: 700;
-            background: linear-gradient(to right, var(--secondary), var(--accent));
+            background: linear-gradient(to right, var(--primary), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             letter-spacing: 1px;
-        }
-        
-        .dev-name {
-            font-size: 1rem;
-            color: var(--gray);
-            font-weight: 300;
-            font-family: 'Roboto Mono', monospace;
         }
         
         nav ul {
@@ -122,11 +101,11 @@
             font-weight: 500;
             padding: 8px 15px;
             border-radius: 30px;
-            transition: all 0.3s ease;
+            transition: var(--transition);
         }
         
         nav a:hover {
-            background: rgba(0, 176, 255, 0.2);
+            background: rgba(37, 99, 235, 0.2);
             color: var(--secondary);
         }
         
@@ -142,29 +121,11 @@
             margin: 0 auto;
         }
         
-        .app-icon-large {
-            width: 120px;
-            height: 120px;
-            background: linear-gradient(135deg, var(--primary), #283593);
-            border-radius: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-            border: 2px solid rgba(118, 255, 3, 0.3);
-        }
-        
-        .app-icon-large i {
-            font-size: 60px;
-            color: var(--accent);
-        }
-        
         .hero h1 {
-            font-size: 3.2rem;
+            font-size: 3.5rem;
             margin-bottom: 20px;
             font-weight: 700;
-            background: linear-gradient(to right, var(--secondary), var(--accent));
+            background: linear-gradient(to right, var(--primary), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -173,177 +134,30 @@
             font-size: 1.3rem;
             max-width: 700px;
             margin: 0 auto 30px;
-            color: #c3e7ff;
+            color: #cbd5e1;
         }
         
         .divider {
             height: 4px;
             width: 120px;
-            background: linear-gradient(to right, var(--secondary), var(--accent));
+            background: linear-gradient(to right, var(--primary), var(--accent));
             margin: 40px auto;
             border-radius: 2px;
         }
         
-        /* App Section */
-        .app-section {
+        /* Apps Section */
+        .apps-section {
             padding: 70px 0;
         }
         
-        .app-card {
-            background: rgba(19, 38, 74, 0.6);
-            border-radius: 25px;
-            overflow: hidden;
-            max-width: 900px;
-            margin: 0 auto;
-            display: flex;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 176, 255, 0.3);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease;
-        }
-        
-        .app-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--accent);
-        }
-        
-        .app-details {
-            padding: 40px;
-            flex: 1;
-        }
-        
-        .app-details h2 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            color: var(--secondary);
-        }
-        
-        .app-details .app-description {
-            font-size: 1.1rem;
-            color: #a0d2eb;
-            margin-bottom: 25px;
-            line-height: 1.8;
-        }
-        
-        .features {
-            margin: 30px 0;
-        }
-        
-        .features h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            color: var(--accent);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .features ul {
-            padding-left: 25px;
-        }
-        
-        .features li {
-            margin-bottom: 12px;
-            position: relative;
-        }
-        
-        .features li::before {
-            content: "■";
-            color: var(--accent);
-            position: absolute;
-            left: -25px;
-            font-size: 0.8rem;
-        }
-        
-        .app-image {
-            flex: 1;
-            background: linear-gradient(135deg, #1d2b64, #1d2b64);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 30px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .app-image::before {
-            content: '';
-            position: absolute;
-            width: 200%;
-            height: 60px;
-            background: rgba(255, 255, 255, 0.1);
-            transform: rotate(-25deg) translateY(-50px);
-            z-index: 1;
-        }
-        
-        .qr-visual {
-            width: 200px;
-            height: 200px;
-            background: #fff;
-            position: relative;
-            z-index: 2;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
-        
-        .qr-visual::before,
-        .qr-visual::after {
-            content: '';
-            position: absolute;
-            background: #000;
-        }
-        
-        /* Simulate QR pattern */
-        .qr-visual::before {
-            width: 40px;
-            height: 40px;
-            top: 20px;
-            left: 20px;
-            border: 5px solid #fff;
-            border-radius: 10px;
-        }
-        
-        .qr-visual::after {
-            width: 10px;
-            height: 140px;
-            top: 30px;
-            left: 80px;
-            box-shadow: 
-                30px 0 0 #000,
-                60px 0 0 #000,
-                90px 0 0 #000,
-                0 30px 0 #000,
-                0 60px 0 #000,
-                0 90px 0 #000,
-                30px 30px 0 #000,
-                60px 30px 0 #000,
-                90px 30px 0 #000,
-                30px 60px 0 #000,
-                60px 60px 0 #000,
-                90px 60px 0 #000;
-        }
-        
-        /* Privacy Section */
-        .privacy-section {
-            padding: 80px 0;
-            background: rgba(16, 22, 58, 0.4);
-            border-top: 1px solid rgba(0, 176, 255, 0.2);
-            border-bottom: 1px solid rgba(0, 176, 255, 0.2);
-        }
-        
-        .privacy-content {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
-        .privacy-content h2 {
+        .section-title {
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 50px;
-            color: var(--secondary);
             position: relative;
         }
         
-        .privacy-content h2::after {
+        .section-title::after {
             content: '';
             position: absolute;
             bottom: -15px;
@@ -351,60 +165,189 @@
             transform: translateX(-50%);
             width: 100px;
             height: 4px;
-            background: linear-gradient(to right, var(--secondary), var(--accent));
+            background: linear-gradient(to right, var(--primary), var(--accent));
             border-radius: 2px;
         }
         
-        .privacy-box {
-            background: rgba(13, 27, 42, 0.8);
-            border-radius: 20px;
-            padding: 40px;
-            margin-bottom: 30px;
-            border-left: 4px solid var(--accent);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            padding: 20px;
         }
         
-        .privacy-box h3 {
-            font-size: 1.6rem;
-            margin-bottom: 20px;
-            color: var(--accent);
+        .app-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        
+        .app-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(37, 99, 235, 0.3);
+            border-color: rgba(37, 99, 235, 0.4);
+        }
+        
+        .app-icon {
+            height: 180px;
+            background: linear-gradient(135deg, #1d2b64, #1d2b64);
             display: flex;
             align-items: center;
-            gap: 10px;
-        }
-        
-        .privacy-box h3 i {
-            color: var(--secondary);
-        }
-        
-        .privacy-box p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 15px;
-            color: #c3e7ff;
-        }
-        
-        .privacy-box ul {
-            padding-left: 25px;
-            margin: 20px 0;
-        }
-        
-        .privacy-box li {
-            margin-bottom: 10px;
+            justify-content: center;
             position: relative;
-            padding-left: 20px;
+            overflow: hidden;
         }
         
-        .privacy-box li::before {
-            content: "▹";
-            color: var(--accent);
+        .app-icon i {
+            font-size: 70px;
+            color: #60a5fa;
+            z-index: 2;
+        }
+        
+        .app-icon::before {
+            content: '';
             position: absolute;
-            left: 0;
+            width: 150%;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(-25deg) translateY(-50px);
+            z-index: 1;
         }
         
-        .policy-actions {
+        .app-info {
+            padding: 25px;
+        }
+        
+        .app-info h3 {
+            font-size: 1.7rem;
+            margin-bottom: 10px;
+            color: #60a5fa;
+        }
+        
+        .app-info p {
+            color: #cbd5e1;
+            margin-bottom: 20px;
+            font-size: 1rem;
+            min-height: 80px;
+        }
+        
+        /* Developer Section */
+        .developer-section {
+            padding: 80px 0;
+            background: rgba(15, 23, 42, 0.5);
+            border-top: 1px solid rgba(37, 99, 235, 0.2);
+            border-bottom: 1px solid rgba(37, 99, 235, 0.2);
+        }
+        
+        .developer-card {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
-            margin-top: 40px;
+            border: 1px solid rgba(37, 99, 235, 0.3);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+        
+        .developer-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            overflow: hidden;
+            border: 5px solid rgba(37, 99, 235, 0.3);
+        }
+        
+        .developer-photo i {
+            font-size: 60px;
+            color: white;
+        }
+        
+        .developer-card h2 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            color: #60a5fa;
+        }
+        
+        .developer-card .role {
+            font-size: 1.2rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .developer-card p {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            margin-bottom: 25px;
+            max-width: 600px;
+            line-height: 1.8;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 20px 0;
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 20px;
+            background: rgba(15, 23, 42, 0.7);
+            border-radius: 15px;
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            transition: var(--transition);
+        }
+        
+        .contact-item:hover {
+            background: rgba(37, 99, 235, 0.2);
+            transform: translateX(5px);
+        }
+        
+        .contact-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .contact-icon i {
+            font-size: 20px;
+            color: white;
+        }
+        
+        .contact-details h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--light);
+        }
+        
+        .contact-details p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: var(--gray);
         }
         
         /* Buttons */
@@ -412,37 +355,37 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            padding: 15px 35px;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
+            padding: 12px 30px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
             color: white;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             border: none;
             cursor: pointer;
-            font-size: 1.1rem;
+            font-size: 1rem;
             letter-spacing: 0.5px;
-            box-shadow: 0 5px 15px rgba(0, 91, 234, 0.4);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
         }
         
         .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 176, 255, 0.6);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.6);
+        }
+        
+        .btn i {
+            font-size: 1rem;
         }
         
         .btn-outline {
             background: transparent;
-            border: 2px solid var(--secondary);
-            color: var(--secondary);
+            border: 2px solid var(--primary);
+            color: var(--primary);
         }
         
         .btn-outline:hover {
-            background: rgba(0, 176, 255, 0.1);
-        }
-        
-        .btn i {
-            font-size: 1.2rem;
+            background: rgba(37, 99, 235, 0.1);
         }
         
         /* Footer */
@@ -457,7 +400,7 @@
             font-size: 2rem;
             font-weight: 700;
             margin-bottom: 10px;
-            background: linear-gradient(to right, var(--secondary), var(--accent));
+            background: linear-gradient(to right, var(--primary), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -473,7 +416,7 @@
         .footer-links a {
             color: var(--light);
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             display: flex;
             align-items: center;
             gap: 8px;
@@ -489,16 +432,6 @@
         }
         
         /* Responsive Design */
-        @media (max-width: 900px) {
-            .app-card {
-                flex-direction: column;
-            }
-            
-            .app-image {
-                min-height: 300px;
-            }
-        }
-        
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
@@ -518,33 +451,28 @@
                 font-size: 1.1rem;
             }
             
-            .app-details h2 {
+            .section-title {
                 font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="qr-pattern"></div>
-    
     <header>
         <div class="container">
             <div class="header-content">
                 <div class="logo">
                     <div class="logo-icon">
-                        <i class="fas fa-qrcode"></i>
+                        <i class="fas fa-user-shield"></i>
                     </div>
-                    <div>
-                        <div class="logo-text">QRCraft</div>
-                        <div class="dev-name">by Meecro Development</div>
-                    </div>
+                    <div class="logo-text">Meecro</div>
                 </div>
                 
                 <nav>
                     <ul>
                         <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
-                        <li><a href="#app"><i class="fas fa-mobile-alt"></i> App</a></li>
-                        <li><a href="#privacy"><i class="fas fa-user-shield"></i> Privacy</a></li>
+                        <li><a href="#apps"><i class="fas fa-mobile-alt"></i> Apps</a></li>
+                        <li><a href="#developer"><i class="fas fa-user"></i> Developer</a></li>
                         <li><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
                     </ul>
                 </nav>
@@ -555,98 +483,99 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="app-icon-large">
-                    <i class="fas fa-qrcode"></i>
-                </div>
                 <h1>Privacy First. Always.</h1>
-                <p>At Meecro, we believe your data belongs to you. Explore our transparent privacy policy for QRCraft - the ultimate QR and barcode solution.</p>
+                <p>Welcome to Meecro's Privacy Hub. Here you'll find transparent privacy policies for all my applications. Your trust is my priority.</p>
                 <div class="divider"></div>
             </div>
         </div>
     </section>
 
-    <section id="app" class="app-section">
+    <section id="apps" class="apps-section">
         <div class="container">
-            <div class="app-card">
-                <div class="app-details">
-                    <h2>QRCraft</h2>
-                    <p class="app-description">The ultimate tool for generating and scanning QR codes and barcodes. Fast, reliable, and completely private.</p>
-                    
-                    <div class="features">
-                        <h3><i class="fas fa-star"></i> Key Features</h3>
-                        <ul>
-                            <li>Generate custom QR codes in seconds</li>
-                            <li>Scan all common barcode formats</li>
-                            <li>Create contact cards, WiFi access, and more</li>
-                            <li>History of scanned codes with export option</li>
-                            <li>No ads, no tracking, no nonsense</li>
-                        </ul>
+            <h2 class="section-title">Our Applications</h2>
+            <div class="apps-grid">
+                <!-- App 1 - QRCraft -->
+                <div class="app-card">
+                    <div class="app-icon">
+                        <i class="fas fa-qrcode"></i>
                     </div>
-                    
-                    <a href="#" class="btn"><i class="fas fa-download"></i> Download Now</a>
+                    <div class="app-info">
+                        <h3>QRCraft</h3>
+                        <p>Scan and generate QR codes and barcodes with this powerful, privacy-focused utility app.</p>
+                        <a href="#" class="btn"><i class="fas fa-file-alt"></i> View Privacy Policy</a>
+                    </div>
                 </div>
                 
-                <div class="app-image">
-                    <div class="qr-visual"></div>
+                <!-- App 2 - Coming Soon -->
+                <div class="app-card">
+                    <div class="app-icon">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <div class="app-info">
+                        <h3>New App Coming</h3>
+                        <p>Exciting new application in development. Privacy policy will be available here soon.</p>
+                        <a href="#" class="btn btn-outline"><i class="fas fa-bell"></i> Notify Me</a>
+                    </div>
+                </div>
+                
+                <!-- App 3 - Coming Soon -->
+                <div class="app-card">
+                    <div class="app-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="app-info">
+                        <h3>Project Idea</h3>
+                        <p>Another innovative app currently in planning phase. Stay tuned for updates!</p>
+                        <a href="#" class="btn btn-outline"><i class="fas fa-bell"></i> Notify Me</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="privacy" class="privacy-section">
+    <section id="developer" class="developer-section">
         <div class="container">
-            <div class="privacy-content">
-                <h2>Privacy Policy</h2>
+            <div class="developer-card">
+                <div class="developer-photo">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h2>Hassan Ali</h2>
+                <p class="role">Independent Developer & Student</p>
+                <p>Hello! I'm Hassan Ali, the sole developer behind Meecro. As a student and independent developer, I create applications with a focus on privacy, simplicity, and user experience. I believe in transparency and putting users first.</p>
                 
-                <div class="privacy-box">
-                    <h3><i class="fas fa-shield-alt"></i> Data Collection</h3>
-                    <p>QRCraft is designed with privacy as a fundamental principle. We do not collect, store, or transmit any personal information.</p>
-                    <p>The app requires the following permissions:</p>
-                    <ul>
-                        <li><strong>Camera Access</strong> - Required for scanning QR codes and barcodes. We never store images or video from your camera.</li>
-                        <li><strong>Photo Library Access</strong> - Optional permission to scan QR codes from your existing photos.</li>
-                    </ul>
-                    <p>All processing happens locally on your device. No data ever leaves your phone.</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>c.g.s.hassan.ali@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Education</h4>
+                            <p>Computer Science Student</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Development</h4>
+                            <p>Mobile & Web Applications</p>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="privacy-box">
-                    <h3><i class="fas fa-lock"></i> Data Security</h3>
-                    <p>We implement industry-standard security measures to protect any data generated within the app:</p>
-                    <ul>
-                        <li>All generated QR codes are stored only on your device</li>
-                        <li>Scan history is encrypted and never synced to cloud services</li>
-                        <li>No third-party analytics or tracking frameworks</li>
-                        <li>No advertisements or data monetization</li>
-                    </ul>
-                    <p>When you delete history items, they are immediately and permanently removed.</p>
-                </div>
-                
-                <div class="privacy-box">
-                    <h3><i class="fas fa-sync-alt"></i> Data Sharing</h3>
-                    <p>QRCraft does not share any data with third parties. The only exceptions are:</p>
-                    <ul>
-                        <li>When you explicitly choose to share a generated QR code</li>
-                        <li>When you export your scan history (you control what is exported)</li>
-                    </ul>
-                    <p>We do not use any third-party SDKs that might collect data without your knowledge.</p>
-                </div>
-                
-                <div class="privacy-box">
-                    <h3><i class="fas fa-question-circle"></i> Your Rights</h3>
-                    <p>As a QRCraft user, you have full control over your data:</p>
-                    <ul>
-                        <li>Access all data stored by the app through the History section</li>
-                        <li>Delete individual items or clear entire history at any time</li>
-                        <li>Export your data in CSV format for your records</li>
-                        <li>Completely disable history storage in Settings</li>
-                    </ul>
-                    <p>Since we don't collect personal data, there's no need for data subject requests.</p>
-                </div>
-                
-                <div class="policy-actions">
-                    <a href="#" class="btn"><i class="fas fa-file-pdf"></i> Download Full Policy (PDF)</a>
-                    <a href="#" class="btn btn-outline"><i class="fas fa-envelope"></i> Contact Privacy Team</a>
-                </div>
+                <a href="mailto:c.g.s.hassan.ali@gmail.com" class="btn"><i class="fas fa-paper-plane"></i> Contact Me</a>
             </div>
         </div>
     </section>
@@ -658,12 +587,12 @@
             
             <div class="footer-links">
                 <a href="#"><i class="fab fa-github"></i> GitHub</a>
-                <a href="#"><i class="fas fa-envelope"></i> Contact</a>
-                <a href="#"><i class="fas fa-globe"></i> Website</a>
-                <a href="#"><i class="fas fa-file-alt"></i> Terms of Service</a>
+                <a href="#"><i class="fab fa-google-play"></i> Play Store</a>
+                <a href="#"><i class="fab fa-app-store"></i> App Store</a>
+                <a href="#"><i class="fas fa-file-alt"></i> Terms</a>
             </div>
             
-            <p class="copyright">© 2023 Meecro Development. All rights reserved.<br>QRCraft and all related content are properties of Meecro.</p>
+            <p class="copyright">© 2023 Meecro Development. All rights reserved.<br>Created with ❤️ by Hassan Ali</p>
         </div>
     </footer>
 </body>
