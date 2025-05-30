@@ -195,7 +195,6 @@
         
         .policy-point {
             margin-bottom: 25px;
-            padding-left: 48px;
             position: relative;
         }
         
@@ -203,12 +202,20 @@
             font-size: 1.3rem;
             margin-bottom: 10px;
             color: var(--light);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .policy-point h3 i {
+            color: var(--accent);
         }
         
         .policy-point p {
             font-size: 1.05rem;
             color: #cbd5e1;
             line-height: 1.7;
+            padding-left: 32px;
         }
         
         .highlight-box {
@@ -245,6 +252,7 @@
             font-size: 1rem;
             color: #cbd5e1;
             line-height: 1.6;
+            padding-left: 0;
         }
         
         .contact-section {
@@ -271,6 +279,7 @@
             background: rgba(139, 92, 246, 0.1);
             border-radius: 50px;
             transition: var(--transition);
+            text-decoration: none;
         }
         
         .contact-email:hover {
@@ -351,10 +360,6 @@
         
         /* Responsive Design */
         @media (max-width: 768px) {
-            .policy-point {
-                padding-left: 0;
-            }
-            
             .policy-section h2 {
                 font-size: 1.6rem;
             }
@@ -366,6 +371,10 @@
             .contact-email {
                 font-size: 1.1rem;
                 padding: 10px 20px;
+            }
+            
+            .policy-point p {
+                padding-left: 0;
             }
         }
     </style>
@@ -409,22 +418,22 @@
                 <h2><i class="fas fa-database"></i> Information We Collect</h2>
                 
                 <div class="policy-point">
-                    <h3>Camera Access</h3>
+                    <h3><i class="fas fa-camera"></i> Camera Access</h3>
                     <p>Required solely for scanning QR codes. No images or video are stored or transmitted.</p>
                 </div>
                 
                 <div class="policy-point">
-                    <h3>Generated QR Codes</h3>
+                    <h3><i class="fas fa-qrcode"></i> Generated QR Codes</h3>
                     <p>Data you input to generate QR codes (e.g., URLs, text) is processed locally and never uploaded to our servers.</p>
                 </div>
                 
                 <div class="policy-point">
-                    <h3>Scan History</h3>
+                    <h3><i class="fas fa-history"></i> Scan History</h3>
                     <p>Saved locally on your device (optional) and never shared externally.</p>
                 </div>
                 
                 <div class="policy-point">
-                    <h3>AdMob Data</h3>
+                    <h3><i class="fas fa-ad"></i> AdMob Data</h3>
                     <p>Google AdMob may collect anonymized data (device ID, IP address) for personalized ads, as per Google's policies.</p>
                 </div>
             </div>
@@ -434,12 +443,12 @@
                 <h2><i class="fas fa-cogs"></i> How We Use Information</h2>
                 
                 <div class="policy-point">
-                    <h3>QR Functionality</h3>
+                    <h3><i class="fas fa-qrcode"></i> QR Functionality</h3>
                     <p>Camera access is used in real-time for scanning; generated QR data remains on your device unless you choose to share it.</p>
                 </div>
                 
                 <div class="policy-point">
-                    <h3>Advertising</h3>
+                    <h3><i class="fas fa-ad"></i> Advertising</h3>
                     <p>AdMob serves non-intrusive ads (banner and interstitial) using standard ad-serving technologies.</p>
                     <div class="highlight-box">
                         <p><i class="fas fa-info-circle"></i> We use carefully placed ads to support development while maintaining a positive user experience.</p>
