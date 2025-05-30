@@ -1,224 +1,658 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy – QRCraft by Meecro</title>
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
-    rel="stylesheet"
-  />
-  <style>
-    :root {
-      --bg: #ffffff;
-      --card: #f7f9fc;
-      --primary: #1e3a8a;
-      --accent: #2563eb;
-      --text: #1f2937;
-      --subtext: #4b5563;
-      --radius: 8px;
-      --transition: 0.3s;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      padding: 2rem;
-    }
-
-    header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      color: var(--primary);
-      margin-bottom: 0.5rem;
-    }
-
-    header p {
-      color: var(--subtext);
-      font-size: 1rem;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-    }
-
-    .card {
-      background: var(--card);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-      transition: transform var(--transition), box-shadow var(--transition);
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-    }
-
-    .card h2 {
-      font-size: 1.25rem;
-      margin-bottom: 0.75rem;
-      color: var(--accent);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .card p {
-      font-size: 0.95rem;
-      color: var(--subtext);
-    }
-
-    .full-width {
-      grid-column: 1 / -1;
-    }
-
-    .last-updated {
-      text-align: center;
-      margin: 2rem 0;
-      font-size: 0.9rem;
-      color: var(--subtext);
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 3rem;
-      font-size: 0.9rem;
-      color: var(--subtext);
-    }
-
-    a.button {
-      display: inline-block;
-      margin-top: 0.75rem;
-      padding: 0.5rem 1rem;
-      background: var(--accent);
-      color: #fff;
-      border-radius: var(--radius);
-      text-decoration: none;
-      font-weight: 600;
-      transition: background var(--transition);
-    }
-
-    a.button:hover {
-      background: var(--primary);
-    }
-
-    @media (max-width: 640px) {
-      .cards {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - QRCraft by Meecro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        :root {
+            --primary: #2563eb;
+            --primary-light: #3b82f6;
+            --secondary: #0ea5e9;
+            --accent: #8b5cf6;
+            --dark: #0f172a;
+            --darker: #020617;
+            --light: #f1f5f9;
+            --lighter: #f8fafc;
+            --gray: #94a3b8;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--darker), var(--dark));
+            color: var(--light);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding-bottom: 2rem;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        /* Header Styles */
+        header {
+            padding: 1.5rem 0;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(37, 99, 235, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            background: var(--primary);
+            width: 2.8rem;
+            height: 2.8rem;
+            border-radius: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+        }
+        
+        .logo-icon i {
+            font-size: 1.4rem;
+            color: white;
+        }
+        
+        .logo-text {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: white;
+            letter-spacing: 0.5px;
+        }
+        
+        .logo-text span {
+            background: linear-gradient(to right, var(--primary-light), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 3rem 0 2rem;
+            text-align: center;
+        }
+        
+        .app-icon-large {
+            width: 6rem;
+            height: 6rem;
+            background: linear-gradient(135deg, var(--primary), #283593);
+            border-radius: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(139, 92, 246, 0.3);
+        }
+        
+        .app-icon-large i {
+            font-size: 2.5rem;
+            color: #a78bfa;
+        }
+        
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+            color: var(--light);
+            line-height: 1.2;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .last-updated {
+            background: rgba(37, 99, 235, 0.2);
+            padding: 0.5rem 1.2rem;
+            border-radius: 2rem;
+            display: inline-block;
+            font-size: 0.9rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .divider {
+            height: 3px;
+            width: 5rem;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            margin: 1.5rem auto;
+            border-radius: 2px;
+        }
+        
+        /* Policy Content */
+        .policy-content {
+            padding: 2rem 0;
+        }
+        
+        .policy-intro {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            padding: 0 1rem;
+        }
+        
+        .policy-intro p {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            line-height: 1.7;
+        }
+        
+        .policy-section {
+            margin-bottom: 2.5rem;
+            padding: 1.8rem;
+            background: var(--card-bg);
+            border-radius: 1rem;
+            border-left: 4px solid var(--accent);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--card-border);
+        }
+        
+        .policy-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.2rem;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .policy-section h2 i {
+            color: var(--accent);
+            width: 2.2rem;
+            height: 2.2rem;
+            background: rgba(139, 92, 246, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+        
+        .policy-point {
+            margin-bottom: 1.5rem;
+        }
+        
+        .policy-point h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.6rem;
+            color: var(--light);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        
+        .policy-point h3 i {
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+        
+        .policy-point p {
+            font-size: 1rem;
+            color: #cbd5e1;
+            line-height: 1.7;
+            margin-left: 1.8rem;
+        }
+        
+        .highlight-box {
+            background: rgba(15, 23, 42, 0.3);
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            border-radius: 0.8rem;
+            padding: 1.2rem;
+            margin: 1.2rem 0;
+        }
+        
+        .highlight-box p {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            margin: 0;
+        }
+        
+        .highlight-box i {
+            color: var(--accent);
+            margin-top: 0.2rem;
+        }
+        
+        .third-party {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.2rem;
+            margin-top: 1rem;
+        }
+        
+        .third-party-item {
+            background: rgba(15, 23, 42, 0.3);
+            border-radius: 0.8rem;
+            padding: 1.2rem;
+            border: 1px solid rgba(139, 92, 246, 0.15);
+        }
+        
+        .third-party-item h4 {
+            font-size: 1.15rem;
+            margin-bottom: 0.6rem;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        
+        .third-party-item p {
+            font-size: 0.95rem;
+            color: #cbd5e1;
+            line-height: 1.6;
+            margin-left: 0;
+        }
+        
+        .contact-section {
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            margin: 2.5rem 0;
+            background: var(--card-bg);
+            border-radius: 1rem;
+            border-top: 3px solid var(--accent);
+            border: 1px solid var(--card-border);
+        }
+        
+        .contact-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+        }
+        
+        .contact-email {
+            font-size: 1.2rem;
+            color: var(--accent);
+            margin: 1.2rem 0;
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            background: rgba(139, 92, 246, 0.1);
+            border-radius: 3rem;
+            transition: var(--transition);
+            text-decoration: none;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+        }
+        
+        .contact-email:hover {
+            background: rgba(139, 92, 246, 0.2);
+            transform: translateY(-3px);
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            padding: 0.8rem 1.8rem;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            color: white;
+            text-decoration: none;
+            border-radius: 3rem;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+        }
+        
+        .btn i {
+            font-size: 0.9rem;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 0 1.5rem;
+            color: var(--gray);
+            font-size: 0.95rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 1.5rem;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: white;
+        }
+        
+        .footer-logo span {
+            background: linear-gradient(to right, var(--primary-light), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .footer-tagline {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            max-width: 500px;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.8rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: var(--light);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .copyright {
+            margin-top: 1.5rem;
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-inner {
+                padding: 0 1rem;
+            }
+            
+            .hero {
+                padding: 2rem 0 1.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .policy-section {
+                padding: 1.5rem;
+            }
+            
+            .policy-section h2 {
+                font-size: 1.3rem;
+            }
+            
+            .policy-point h3 {
+                font-size: 1.1rem;
+            }
+            
+            .policy-point p {
+                font-size: 0.95rem;
+                margin-left: 1.5rem;
+            }
+            
+            .contact-email {
+                font-size: 1rem;
+                padding: 0.7rem 1.5rem;
+            }
+            
+            .app-icon-large {
+                width: 5rem;
+                height: 5rem;
+            }
+            
+            .app-icon-large i {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo-text {
+                font-size: 1.4rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1rem;
+            }
+            
+            .policy-section {
+                padding: 1.2rem;
+            }
+            
+            .policy-section h2 {
+                font-size: 1.2rem;
+            }
+            
+            .policy-point h3 {
+                font-size: 1.05rem;
+            }
+            
+            .policy-point p {
+                margin-left: 1.2rem;
+                font-size: 0.9rem;
+            }
+            
+            .third-party {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-section h2 {
+                font-size: 1.5rem;
+            }
+            
+            .contact-email {
+                font-size: 0.95rem;
+            }
+            
+            .footer-links {
+                gap: 1.2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>QRCraft Privacy Policy</h1>
-    <p>Your privacy matters. Last updated: May 21, 2025</p>
-  </header>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <div class="logo-text">Meecro<span>Dev</span></div>
+            </a>
+        </div>
+    </header>
 
-  <div class="container">
-    <div class="cards">
-      <div class="card">
-        <h2><i class="fas fa-camera"></i> Camera Access</h2>
-        <p>
-          We only request camera access to scan QR codes in real time.
-          No images or videos are stored or transmitted off your device.
-        </p>
-      </div>
+    <section class="hero">
+        <div class="container">
+            <div class="app-icon-large">
+                <i class="fas fa-qrcode"></i>
+            </div>
+            <h1>Privacy Policy for QRCraft</h1>
+            <p class="subtitle">Your privacy matters. This policy explains how we handle your information in our QR code scanning and generation app.</p>
+            <div class="last-updated">
+                <i class="fas fa-calendar-alt"></i> Last Updated: May 21, 2025
+            </div>
+            <div class="divider"></div>
+        </div>
+    </section>
 
-      <div class="card">
-        <h2><i class="fas fa-qrcode"></i> QR Code Generation</h2>
-        <p>
-          Data you enter (URLs, text) is processed entirely on-device.
-          We never upload your generated codes to our servers.
-        </p>
-      </div>
-
-      <div class="card">
-        <h2><i class="fas fa-history"></i> Scan History</h2>
-        <p>
-          Scan history is stored locally and is optional. You can clear
-          it anytime from the app settings.
-        </p>
-      </div>
-
-      <div class="card">
-        <h2><i class="fas fa-ad"></i> AdMob &amp; Analytics</h2>
-        <p>
-          We use Google AdMob for ads. AdMob may collect anonymized data
-          (device ID, IP) per Google's policies.
-        </p>
-      </div>
-
-      <div class="card full-width">
-        <h2><i class="fas fa-shield-alt"></i> Data Security</h2>
-        <p>
-          All your data stays on your device unless you explicitly share it.
-          We do not sell, share, or transmit personal data to third parties
-          beyond advertising needs.
-        </p>
-      </div>
-
-      <div class="card full-width">
-        <h2><i class="fas fa-handshake"></i> Third-Party Services</h2>
-        <p>
-          <strong>Google AdMob:</strong> <a class="button" href="https://policies.google.com/privacy" target="_blank">View Policy</a>
-        </p>
-        <p>
-          <strong>ZXing Library:</strong> Open-source QR scanner, no data collection.
-        </p>
-      </div>
-
-      <div class="card full-width">
-        <h2><i class="fas fa-child"></i> Children’s Privacy</h2>
-        <p>
-          We comply with COPPA. We do not knowingly collect information
-          from children under 13.
-        </p>
-      </div>
-
-      <div class="card full-width">
-        <h2><i class="fas fa-sync-alt"></i> Policy Updates</h2>
-        <p>
-          Any changes will be posted here. Continued use of QRCraft after
-          updates means you accept the revised policy.
-        </p>
-      </div>
-    </div>
-
-    <div class="last-updated">
-      <i class="fas fa-calendar-alt"></i> Last updated May 21, 2025
-    </div>
+    <section class="policy-content">
+        <div class="container">
+            <div class="policy-intro">
+                <p>This Privacy Policy explains how QRCraft collects, uses, and protects your information. By using QRCraft, you agree to this policy.</p>
+            </div>
+            
+            <!-- Information We Collect -->
+            <div class="policy-section">
+                <h2><i class="fas fa-database"></i> Information We Collect</h2>
+                
+                <div class="policy-point">
+                    <h3><i class="fas fa-camera"></i> Camera Access</h3>
+                    <p>Required solely for scanning QR codes. No images or video are stored or transmitted.</p>
+                </div>
+                
+                <div class="policy-point">
+                    <h3><i class="fas fa-qrcode"></i> Generated QR Codes</h3>
+                    <p>Data you input to generate QR codes (e.g., URLs, text) is processed locally and never uploaded to our servers.</p>
+                </div>
+                
+                <div class="policy-point">
+                    <h3><i class="fas fa-history"></i> Scan History</h3>
+                    <p>Saved locally on your device (optional) and never shared externally.</p>
+                </div>
+                
+                <div class="policy-point">
+                    <h3><i class="fas fa-ad"></i> AdMob Data</h3>
+                    <p>Google AdMob may collect anonymized data (device ID, IP address) for personalized ads, as per Google's policies.</p>
+                </div>
+            </div>
+            
+            <!-- How We Use Information -->
+            <div class="policy-section">
+                <h2><i class="fas fa-cogs"></i> How We Use Information</h2>
+                
+                <div class="policy-point">
+                    <h3><i class="fas fa-qrcode"></i> QR Functionality</h3>
+                    <p>Camera access is used in real-time for scanning; generated QR data remains on your device unless you choose to share it.</p>
+                </div>
+                
+                <div class="policy-point">
+                    <h3><i class="fas fa-ad"></i> Advertising</h3>
+                    <p>AdMob serves non-intrusive ads (banner and interstitial) using standard ad-serving technologies.</p>
+                    <div class="highlight-box">
+                        <p><i class="fas fa-info-circle"></i> We use carefully placed ads to support development while maintaining a positive user experience.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Third-Party Services -->
+            <div class="policy-section">
+                <h2><i class="fas fa-handshake"></i> Third-Party Services</h2>
+                
+                <div class="third-party">
+                    <div class="third-party-item">
+                        <h4><i class="fab fa-google"></i> Google AdMob</h4>
+                        <p>Follows Google's Privacy Policy. We only use AdMob for ad serving in our free version.</p>
+                        <a href="https://policies.google.com/privacy" class="btn" style="margin-top: 0.8rem;">
+                            <i class="fas fa-external-link-alt"></i> View Policy
+                        </a>
+                    </div>
+                    
+                    <div class="third-party-item">
+                        <h4><i class="fas fa-code"></i> ZXing Library</h4>
+                        <p>Open-source QR scanning library. Does not collect any user data.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Data Security -->
+            <div class="policy-section">
+                <h2><i class="fas fa-shield-alt"></i> Data Security</h2>
+                
+                <div class="policy-point">
+                    <p>All user-generated data (scan history, QR codes) is stored locally and can be cleared via the app's "Clear History" feature.</p>
+                    <p>We do not sell, share, or transmit your data to third parties beyond what's necessary for ad serving through Google AdMob.</p>
+                    <div class="highlight-box">
+                        <p><i class="fas fa-lock"></i> Your generated QR codes and scan history never leave your device and are not accessible by us or any third parties.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Children's Privacy -->
+            <div class="policy-section">
+                <h2><i class="fas fa-child"></i> Children's Privacy</h2>
+                
+                <div class="policy-point">
+                    <p>QRCraft complies with COPPA (Children's Online Privacy Protection Act). We do not knowingly collect data from children under 13.</p>
+                </div>
+            </div>
+            
+            <!-- Policy Changes -->
+            <div class="policy-section">
+                <h2><i class="fas fa-sync-alt"></i> Policy Updates</h2>
+                
+                <div class="policy-point">
+                    <p>Updates to this policy will be posted on this page. Continued use of the app signifies your acceptance of any changes.</p>
+                    <p>We will notify users of significant changes through app updates or in-app notifications.</p>
+                </div>
+            </div>
+            
+            <!-- Contact Section -->
+            <div class="contact-section">
+                <h2><i class="fas fa-envelope"></i> Contact Us</h2>
+                <p>For any questions about this privacy policy or your data:</p>
+                <a href="mailto:c.g.s.hassan.ali@gmail.com" class="contact-email">
+                    <i class="fas fa-paper-plane"></i> c.g.s.hassan.ali@gmail.com
+                </a>
+                <p>We typically respond within 24-48 hours.</p>
+            </div>
+        </div>
+    </section>
 
     <footer>
-      <p>
-        Need help? <a href="mailto:c.g.s.hassan.ali@gmail.com">c.g.s.hassan.ali@gmail.com</a>
-      </p>
-      <p>© 2023 Meecro Development. All rights reserved.</p>
+        <div class="container">
+            <div class="footer-logo">Meecro<span>Dev</span></div>
+            <p class="footer-tagline">Transparent development for privacy-conscious users</p>
+            
+            <div class="footer-links">
+                <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                <a href="#"><i class="fas fa-home"></i> Home</a>
+                <a href="#"><i class="fas fa-user"></i> Developer</a>
+                <a href="#"><i class="fas fa-file-alt"></i> Terms</a>
+            </div>
+            
+            <p class="copyright">© 2023 Meecro Development. All rights reserved.<br>QRCraft and all related content are properties of Meecro.</p>
+        </div>
     </footer>
-  </div>
 </body>
 </html>
