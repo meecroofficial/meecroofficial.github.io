@@ -5,32 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meecro - Privacy Policies</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
+        /* Base Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         :root {
             --primary: #2563eb;
+            --primary-light: #3b82f6;
             --secondary: #0ea5e9;
             --accent: #8b5cf6;
             --dark: #0f172a;
+            --darker: #020617;
             --light: #f1f5f9;
+            --lighter: #f8fafc;
             --gray: #94a3b8;
-            --card-bg: rgba(15, 23, 42, 0.85);
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --card-border: rgba(255, 255, 255, 0.1);
             --transition: all 0.3s ease;
         }
         
         body {
-            background: linear-gradient(135deg, #0f172a, #1e293b);
+            background: linear-gradient(135deg, var(--darker), var(--dark));
             color: var(--light);
-            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
             min-height: 100vh;
-            overflow-x: hidden;
         }
         
         .container {
@@ -41,57 +44,60 @@
         
         /* Header Styles */
         header {
-            padding: 20px 0;
+            padding: 15px 0;
             background: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(37, 99, 235, 0.2);
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
         
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
         }
         
         .logo {
             display: flex;
             align-items: center;
             gap: 15px;
+            text-decoration: none;
         }
         
-        .logo-icon {
-            background: var(--primary);
+        .logo-image {
             width: 50px;
             height: 50px;
-            border-radius: 15px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.5);
-        }
-        
-        .logo-icon i {
-            font-size: 24px;
             color: white;
+            font-size: 24px;
+            font-weight: bold;
         }
         
         .logo-text {
             font-size: 1.8rem;
             font-weight: 700;
-            background: linear-gradient(to right, var(--primary), var(--accent));
+            color: white;
+        }
+        
+        .logo-text span {
+            background: linear-gradient(to right, var(--primary-light), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            letter-spacing: 1px;
         }
         
         nav ul {
             display: flex;
             list-style: none;
-            gap: 25px;
+            gap: 15px;
+            flex-wrap: wrap;
         }
         
         nav a {
@@ -102,6 +108,9 @@
             padding: 8px 15px;
             border-radius: 30px;
             transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
         
         nav a:hover {
@@ -111,9 +120,8 @@
         
         /* Hero Section */
         .hero {
-            padding: 100px 0 70px;
+            padding: 80px 0 50px;
             text-align: center;
-            position: relative;
         }
         
         .hero-content {
@@ -122,16 +130,15 @@
         }
         
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 2.8rem;
             margin-bottom: 20px;
             font-weight: 700;
-            background: linear-gradient(to right, var(--primary), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--light);
+            line-height: 1.2;
         }
         
         .hero p {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             max-width: 700px;
             margin: 0 auto 30px;
             color: #cbd5e1;
@@ -139,7 +146,7 @@
         
         .divider {
             height: 4px;
-            width: 120px;
+            width: 100px;
             background: linear-gradient(to right, var(--primary), var(--accent));
             margin: 40px auto;
             border-radius: 2px;
@@ -147,12 +154,12 @@
         
         /* Apps Section */
         .apps-section {
-            padding: 70px 0;
+            padding: 60px 0;
         }
         
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             margin-bottom: 50px;
             position: relative;
         }
@@ -171,26 +178,27 @@
         
         .apps-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             padding: 20px;
         }
         
         .app-card {
-            background: var(--card-bg);
+            background: rgba(19, 38, 74, 0.6);
             border-radius: 20px;
             overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid rgba(37, 99, 235, 0.2);
+            border: 1px solid rgba(64, 224, 208, 0.2);
             backdrop-filter: blur(10px);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            position: relative;
+            display: flex;
+            flex-direction: column;
         }
         
         .app-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(37, 99, 235, 0.3);
-            border-color: rgba(37, 99, 235, 0.4);
+            box-shadow: 0 15px 35px rgba(0, 91, 234, 0.3);
+            border-color: rgba(64, 224, 208, 0.4);
         }
         
         .app-icon {
@@ -203,10 +211,17 @@
             overflow: hidden;
         }
         
-        .app-icon i {
-            font-size: 70px;
-            color: #60a5fa;
-            z-index: 2;
+        .app-icon-image {
+            width: 80px;
+            height: 80px;
+            background: var(--accent);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
         }
         
         .app-icon::before {
@@ -221,41 +236,46 @@
         
         .app-info {
             padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
         
         .app-info h3 {
             font-size: 1.7rem;
             margin-bottom: 10px;
-            color: #60a5fa;
+            color: var(--secondary);
         }
         
         .app-info p {
             color: #cbd5e1;
             margin-bottom: 20px;
             font-size: 1rem;
-            min-height: 80px;
+            flex-grow: 1;
         }
         
         /* Developer Section */
         .developer-section {
             padding: 80px 0;
-            background: rgba(15, 23, 42, 0.5);
-            border-top: 1px solid rgba(37, 99, 235, 0.2);
-            border-bottom: 1px solid rgba(37, 99, 235, 0.2);
+            background: rgba(16, 22, 58, 0.4);
+            margin: 60px 0;
+            border-top: 1px solid rgba(64, 224, 208, 0.2);
+            border-bottom: 1px solid rgba(64, 224, 208, 0.2);
         }
         
         .developer-card {
             max-width: 800px;
             margin: 0 auto;
-            background: var(--card-bg);
+            background: rgba(19, 38, 74, 0.6);
             border-radius: 20px;
             padding: 40px;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            border: 1px solid rgba(37, 99, 235, 0.3);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(64, 224, 208, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
         }
         
         .developer-photo {
@@ -269,9 +289,6 @@
             margin-bottom: 25px;
             overflow: hidden;
             border: 5px solid rgba(37, 99, 235, 0.3);
-        }
-        
-        .developer-photo i {
             font-size: 60px;
             color: white;
         }
@@ -279,12 +296,12 @@
         .developer-card h2 {
             font-size: 2.2rem;
             margin-bottom: 10px;
-            color: #60a5fa;
+            color: var(--secondary);
         }
         
         .developer-card .role {
             font-size: 1.2rem;
-            color: var(--secondary);
+            color: var(--accent);
             margin-bottom: 20px;
             font-weight: 500;
         }
@@ -330,11 +347,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-        
-        .contact-icon i {
-            font-size: 20px;
             color: white;
+            font-size: 20px;
         }
         
         .contact-details h4 {
@@ -354,6 +368,7 @@
         .btn {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 10px;
             padding: 12px 30px;
             background: linear-gradient(to right, var(--primary), var(--accent));
@@ -367,6 +382,7 @@
             font-size: 1rem;
             letter-spacing: 0.5px;
             box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
+            width: fit-content;
         }
         
         .btn:hover {
@@ -394,13 +410,19 @@
             padding: 60px 0 40px;
             color: var(--gray);
             font-size: 0.95rem;
+            background: rgba(15, 23, 42, 0.7);
+            border-top: 1px solid rgba(37, 99, 235, 0.2);
         }
         
         .footer-logo {
             font-size: 2rem;
             font-weight: 700;
             margin-bottom: 10px;
-            background: linear-gradient(to right, var(--primary), var(--accent));
+            color: white;
+        }
+        
+        .footer-logo span {
+            background: linear-gradient(to right, var(--primary-light), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -431,20 +453,93 @@
             font-size: 0.9rem;
         }
         
+        /* Privacy Policy Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            overflow-y: auto;
+            padding: 20px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .modal-content {
+            background: rgba(15, 23, 42, 0.95);
+            border-radius: 20px;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            position: relative;
+            border: 1px solid rgba(64, 224, 208, 0.3);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: var(--light);
+            cursor: pointer;
+            transition: var(--transition);
+            background: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .close-modal:hover {
+            color: var(--accent);
+            transform: rotate(90deg);
+        }
+        
+        .modal-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .modal-header h2 {
+            font-size: 2.2rem;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+        
+        .modal-body {
+            max-height: 70vh;
+            overflow-y: auto;
+            padding: 10px;
+        }
+        
+        .policy-section {
+            margin-bottom: 30px;
+        }
+        
+        .policy-section h3 {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(64, 224, 208, 0.3);
+        }
+        
+        .policy-section p {
+            color: #cbd5e1;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+        
         /* Responsive Design */
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
+        @media (max-width: 992px) {
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.4rem;
             }
             
             .hero p {
@@ -455,18 +550,87 @@
                 font-size: 2rem;
             }
         }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            
+            nav ul {
+                justify-content: center;
+            }
+            
+            .hero {
+                padding: 60px 0 30px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .developer-photo {
+                width: 120px;
+                height: 120px;
+                font-size: 40px;
+            }
+            
+            .developer-card h2 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .logo {
+                justify-content: center;
+                width: 100%;
+            }
+            
+            nav ul {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .apps-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .app-info h3 {
+                font-size: 1.5rem;
+            }
+            
+            .developer-card {
+                padding: 30px 20px;
+            }
+            
+            .developer-card h2 {
+                font-size: 1.6rem;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
         <div class="container">
             <div class="header-content">
-                <div class="logo">
-                    <div class="logo-icon">
-                        <i class="fas fa-user-shield"></i>
-                    </div>
-                    <div class="logo-text">Meecro</div>
-                </div>
+                <a href="#" class="logo">
+                    <div class="logo-image">M</div>
+                    <div class="logo-text">Meecro<span>Dev</span></div>
+                </a>
                 
                 <nav>
                     <ul>
@@ -480,6 +644,7 @@
         </div>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
@@ -490,55 +655,61 @@
         </div>
     </section>
 
+    <!-- Apps Section -->
     <section id="apps" class="apps-section">
         <div class="container">
             <h2 class="section-title">Our Applications</h2>
             <div class="apps-grid">
-                <!-- App 1 - QRCraft -->
+                <!-- QRCraft App -->
                 <div class="app-card">
                     <div class="app-icon">
-                        <i class="fas fa-qrcode"></i>
+                        <div class="app-icon-image">Q</div>
                     </div>
                     <div class="app-info">
                         <h3>QRCraft</h3>
                         <p>Scan and generate QR codes and barcodes with this powerful, privacy-focused utility app.</p>
-                        <a href="#" class="btn"><i class="fas fa-file-alt"></i>Privacy Policy</a>
+                        <a href="#" class="btn" onclick="showPrivacy('qrCraft')">
+                            <i class="fas fa-file-alt"></i> View Privacy Policy
+                        </a>
                     </div>
                 </div>
                 
-                <!-- App 2 - Coming Soon -->
+                <!-- Coming Soon App 1 -->
                 <div class="app-card">
                     <div class="app-icon">
-                        <i class="fas fa-question-circle"></i>
+                        <div class="app-icon-image">?</div>
                     </div>
                     <div class="app-info">
                         <h3>New App Coming</h3>
                         <p>Exciting new application in development. Privacy policy will be available here soon.</p>
-                        <a href="#" class="btn btn-outline"><i class="fas fa-bell"></i> Notify Me</a>
+                        <a href="#" class="btn btn-outline">
+                            <i class="fas fa-bell"></i> Notify Me
+                        </a>
                     </div>
                 </div>
                 
-                <!-- App 3 - Coming Soon -->
+                <!-- Coming Soon App 2 -->
                 <div class="app-card">
                     <div class="app-icon">
-                        <i class="fas fa-lightbulb"></i>
+                        <div class="app-icon-image">+</div>
                     </div>
                     <div class="app-info">
                         <h3>Project Idea</h3>
                         <p>Another innovative app currently in planning phase. Stay tuned for updates!</p>
-                        <a href="#" class="btn btn-outline"><i class="fas fa-bell"></i> Notify Me</a>
+                        <a href="#" class="btn btn-outline">
+                            <i class="fas fa-bell"></i> Notify Me
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Developer Section -->
     <section id="developer" class="developer-section">
         <div class="container">
             <div class="developer-card">
-                <div class="developer-photo">
-                    <i class="fas fa-user"></i>
-                </div>
+                <div class="developer-photo">H</div>
                 <h2>Hassan Ali</h2>
                 <p class="role">Independent Developer & Student</p>
                 <p>Hello! I'm Hassan Ali, the sole developer behind Meecro. As a student and independent developer, I create applications with a focus on privacy, simplicity, and user experience. I believe in transparency and putting users first.</p>
@@ -560,7 +731,7 @@
                         </div>
                         <div class="contact-details">
                             <h4>Education</h4>
-                            <p>Computer Science Student</p>
+                            <p>Student</p>
                         </div>
                     </div>
                     
@@ -575,14 +746,17 @@
                     </div>
                 </div>
                 
-                <a href="mailto:c.g.s.hassan.ali@gmail.com" class="btn"><i class="fas fa-paper-plane"></i> Contact Me</a>
+                <a href="mailto:c.g.s.hassan.ali@gmail.com" class="btn">
+                    <i class="fas fa-paper-plane"></i> Contact Me
+                </a>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-logo">Meecro</div>
+            <div class="footer-logo">Meecro<span>Dev</span></div>
             <p>Transparent development for privacy-conscious users</p>
             
             <div class="footer-links">
@@ -595,5 +769,105 @@
             <p class="copyright">© 2023 Meecro Development. All rights reserved.<br>Created with ❤️ by Hassan Ali</p>
         </div>
     </footer>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacyModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div class="modal-header">
+                <h2 id="modalAppName">Privacy Policy</h2>
+                <p id="modalAppDesc">App description</p>
+            </div>
+            <div class="modal-body" id="modalPolicyContent">
+                <!-- Policy content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Privacy policy data
+        const privacyPolicies = {
+            qrCraft: {
+                name: "QRCraft",
+                description: "QR Code Scanner & Generator",
+                policy: `
+                    <div class="policy-section">
+                        <h3>Privacy Policy for QRCraft</h3>
+                        <p>Last Updated: May 21, 2025</p>
+                        <p>This Privacy Policy explains how QRCraft collects, uses, and protects your information. By using QRCraft, you agree to this policy.</p>
+                    </div>
+                    
+                    <div class="policy-section">
+                        <h3>Information We Collect</h3>
+                        <p><strong>Camera Access:</strong> Required solely for scanning QR codes. No images or video are stored or transmitted.</p>
+                        <p><strong>Generated QR Codes:</strong> Data you input to generate QR codes is processed locally and never uploaded to our servers.</p>
+                        <p><strong>Scan History:</strong> Saved locally on your device (optional) and never shared externally.</p>
+                        <p><strong>AdMob Data:</strong> Google AdMob may collect anonymized data (device ID, IP address) for personalized ads.</p>
+                    </div>
+                    
+                    <div class="policy-section">
+                        <h3>How We Use Information</h3>
+                        <p><strong>QR Functionality:</strong> Camera access is used in real-time for scanning; generated QR data remains on your device.</p>
+                        <p><strong>Advertising:</strong> AdMob serves non-intrusive ads using standard ad-serving technologies.</p>
+                    </div>
+                    
+                    <div class="policy-section">
+                        <h3>Third-Party Services</h3>
+                        <p><strong>Google AdMob:</strong> Follows Google's Privacy Policy. We only use AdMob for ad serving.</p>
+                        <p><strong>ZXing Library:</strong> Open-source QR scanning library. Does not collect any user data.</p>
+                    </div>
+                    
+                    <div class="policy-section">
+                        <h3>Data Security</h3>
+                        <p>All user-generated data is stored locally and can be cleared via the app's "Clear History" feature.</p>
+                        <p>We do not sell, share, or transmit your data to third parties beyond what's necessary for ad serving.</p>
+                    </div>
+                    
+                    <div class="policy-section">
+                        <h3>Children's Privacy</h3>
+                        <p>QRCraft complies with COPPA. We do not knowingly collect data from children under 13.</p>
+                    </div>
+                    
+                    <div class="policy-section">
+                        <h3>Policy Updates</h3>
+                        <p>Updates to this policy will be posted on this page. Continued use of the app signifies your acceptance of any changes.</p>
+                    </div>
+                    
+                    <div class="policy-section">
+                        <h3>Contact Us</h3>
+                        <p>For any questions about this privacy policy or your data:</p>
+                        <p><strong>Email:</strong> c.g.s.hassan.ali@gmail.com</p>
+                        <p>We typically respond within 24-48 hours.</p>
+                    </div>
+                `
+            }
+        };
+
+        // Show privacy policy modal
+        function showPrivacy(appId) {
+            const app = privacyPolicies[appId];
+            if (app) {
+                document.getElementById('modalAppName').textContent = `${app.name} Privacy Policy`;
+                document.getElementById('modalAppDesc').textContent = app.description;
+                document.getElementById('modalPolicyContent').innerHTML = app.policy;
+                document.getElementById('privacyModal').style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        // Close modal
+        function closeModal() {
+            document.getElementById('privacyModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside content
+        window.onclick = function(event) {
+            const modal = document.getElementById('privacyModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+    </script>
 </body>
 </html>
