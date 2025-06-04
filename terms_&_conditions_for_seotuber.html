@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEOTuber - Terms and Conditions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #4a6cf7;
+            --secondary: #3a56e0;
+            --accent: #5b7cfa;
+            --light: #f8f9ff;
+            --dark: #1e293b;
+            --gray: #64748b;
+            --warning: #f43f5e;
+            --success: #0ea5e9;
+            --border-radius: 12px;
+            --shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f0f4ff 0%, #e6f0ff 100%);
+            color: var(--dark);
+            line-height: 1.7;
+            padding-bottom: 50px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(120deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 70%);
+            transform: rotate(30deg);
+        }
+        
+        .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .logo-icon {
+            font-size: 3rem;
+            background: rgba(255, 255, 255, 0.2);
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px);
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .update-info {
+            background: rgba(255, 255, 255, 0.15);
+            display: inline-block;
+            padding: 10px 25px;
+            border-radius: 30px;
+            margin-top: 25px;
+            font-weight: 500;
+            backdrop-filter: blur(5px);
+        }
+        
+        .toc-container {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+        }
+        
+        .toc-container h2 {
+            color: var(--primary);
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .toc-card {
+            background: rgba(74, 108, 247, 0.05);
+            border: 1px solid rgba(74, 108, 247, 0.15);
+            border-radius: 10px;
+            padding: 20px;
+            transition: var(--transition);
+        }
+        
+        .toc-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 25px rgba(74, 108, 247, 0.1);
+        }
+        
+        .toc-card h3 {
+            color: var(--secondary);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .toc-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .toc-card li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .toc-card li:before {
+            content: "•";
+            color: var(--accent);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -7px;
+        }
+        
+        .toc-card a {
+            color: var(--dark);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .toc-card a:hover {
+            color: var(--primary);
+        }
+        
+        .terms-content {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
+        }
+        
+        .terms-section {
+            margin-bottom: 50px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .terms-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        h2 {
+            color: var(--primary);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        h2 i {
+            background: rgba(74, 108, 247, 0.1);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+        
+        h3 {
+            color: var(--secondary);
+            margin: 30px 0 20px;
+            font-size: 1.5rem;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            color: #334155;
+        }
+        
+        ul, ol {
+            padding-left: 30px;
+            margin-bottom: 25px;
+        }
+        
+        li {
+            margin-bottom: 15px;
+            color: #334155;
+        }
+        
+        .warning-box {
+            background: rgba(244, 63, 94, 0.05);
+            border-left: 4px solid var(--warning);
+            padding: 25px;
+            border-radius: 0 8px 8px 0;
+            margin: 30px 0;
+            display: flex;
+            gap: 20px;
+        }
+        
+        .warning-box i {
+            color: var(--warning);
+            font-size: 1.8rem;
+            flex-shrink: 0;
+            margin-top: 5px;
+        }
+        
+        .highlight-box {
+            background: rgba(74, 108, 247, 0.05);
+            border-left: 4px solid var(--primary);
+            padding: 25px;
+            border-radius: 0 8px 8px 0;
+            margin: 30px 0;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .feature-card {
+            background: rgba(91, 124, 250, 0.05);
+            border: 1px solid rgba(91, 124, 250, 0.2);
+            border-radius: 10px;
+            padding: 25px;
+            transition: var(--transition);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(91, 124, 250, 0.15);
+        }
+        
+        .feature-card h4 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.2rem;
+        }
+        
+        .contact-box {
+            background: linear-gradient(120deg, rgba(74, 108, 247, 0.05), rgba(58, 86, 224, 0.05));
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin-top: 40px;
+            text-align: center;
+        }
+        
+        .contact-box h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+        
+        .contact-email {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 14px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: var(--transition);
+            font-size: 1.1rem;
+        }
+        
+        .contact-email:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(74, 108, 247, 0.3);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            color: var(--gray);
+            font-size: 0.95rem;
+            padding: 20px;
+        }
+        
+        .acceptance-box {
+            background: rgba(14, 165, 233, 0.08);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin: 30px 0;
+            border: 1px dashed var(--success);
+            text-align: center;
+        }
+        
+        @media (max-width: 900px) {
+            .toc-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2.3rem;
+            }
+            
+            .terms-content {
+                padding: 30px 25px;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            header {
+                padding: 40px 0;
+            }
+            
+            h1 {
+                font-size: 1.9rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .logo-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 2.2rem;
+            }
+            
+            .toc-container {
+                padding: 25px 20px;
+            }
+            
+            .feature-card {
+                padding: 20px;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            h2 i {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-file-contract"></i>
+                </div>
+                <h1>SEOTuber Terms and Conditions</h1>
+                <div class="subtitle">By using SEOTuber, you agree to comply with and be bound by the following terms and conditions</div>
+            </div>
+            <div class="update-info">
+                <i class="fas fa-calendar-alt"></i> Last Updated: June 4, 2025 | Effective Date: June 4, 2025
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="toc-container">
+            <h2><i class="fas fa-bookmark"></i> Table of Contents</h2>
+            <div class="toc-grid">
+                <div class="toc-card">
+                    <h3><i class="fas fa-gavel"></i> Legal Terms</h3>
+                    <ul>
+                        <li><a href="#acceptance">1. Acceptance of Terms</a></li>
+                        <li><a href="#services">2. Services Description</a></li>
+                        <li><a href="#account">3. Account Responsibility</a></li>
+                        <li><a href="#intellectual">4. Intellectual Property</a></li>
+                    </ul>
+                </div>
+                
+                <div class="toc-card">
+                    <h3><i class="fas fa-ban"></i> Usage Policies</h3>
+                    <ul>
+                        <li><a href="#acceptable-use">5. Acceptable Use</a></li>
+                        <li><a href="#prohibited">6. Prohibited Activities</a></li>
+                        <li><a href="#content">7. Content Responsibility</a></li>
+                        <li><a href="#third-party">8. Third-Party Services</a></li>
+                    </ul>
+                </div>
+                
+                <div class="toc-card">
+                    <h3><i class="fas fa-shield-alt"></i> Limitations</h3>
+                    <ul>
+                        <li><a href="#disclaimer">9. Disclaimers</a></li>
+                        <li><a href="#liability">10. Limitation of Liability</a></li>
+                        <li><a href="#indemnification">11. Indemnification</a></li>
+                        <li><a href="#termination">12. Termination</a></li>
+                    </ul>
+                </div>
+                
+                <div class="toc-card">
+                    <h3><i class="fas fa-file-alt"></i> Policy Terms</h3>
+                    <ul>
+                        <li><a href="#changes">13. Changes to Terms</a></li>
+                        <li><a href="#governing">14. Governing Law</a></li>
+                        <li><a href="#contact">15. Contact Information</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="terms-content">
+            <div class="terms-section" id="acceptance">
+                <h2><i class="fas fa-check-circle"></i> 1. Acceptance of Terms</h2>
+                <p>By accessing or using SEOTuber ("the App"), you agree to be bound by these Terms and Conditions ("Terms"). If you do not agree to all of these Terms, do not access or use the App.</p>
+                
+                <div class="acceptance-box">
+                    <p><i class="fas fa-exclamation-circle"></i> <strong>Your continued use of SEOTuber constitutes your acceptance of these Terms.</strong> We reserve the right to modify these Terms at any time without prior notice.</p>
+                </div>
+            </div>
+            
+            <div class="terms-section" id="services">
+                <h2><i class="fas fa-cogs"></i> 2. Services Description</h2>
+                <p>SEOTuber provides SEO tools for YouTube content creators through the following features:</p>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h4><i class="fas fa-heading"></i> Title Generator</h4>
+                        <p>Analyzes topics and keywords to generate potential video titles. Outputs are suggestions only and should be verified for appropriateness and effectiveness.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h4><i class="fas fa-key"></i> Keyword Research</h4>
+                        <p>Generates keyword suggestions with estimated search volume and competition metrics. These metrics are estimates only and not guaranteed for accuracy.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h4><i class="fas fa-check-square"></i> SEO Checker</h4>
+                        <p>Provides SEO scores for public YouTube videos based on analysis of publicly available data. Scores are algorithmic estimates only.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h4><i class="fas fa-tags"></i> Tag Extractor</h4>
+                        <p>Extracts tags from public YouTube videos. Use of this feature must comply with YouTube's Terms of Service and all applicable laws.</p>
+                    </div>
+                </div>
+                
+                <div class="warning-box">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <div>
+                        <h3>Service Limitations</h3>
+                        <p>SEOTuber does not guarantee improved YouTube performance, higher rankings, or increased viewership. The App provides analytical tools only, and actual results depend on numerous factors beyond our control.</p>
+                        <p>All data provided (including volume and competition metrics) are estimates only and should not be relied upon as 100% accurate.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="terms-section" id="account">
+                <h2><i class="fas fa-user"></i> 3. Account Responsibility</h2>
+                <p>If SEOTuber implements account registration in the future:</p>
+                <ul>
+                    <li>You are responsible for maintaining the confidentiality of your account credentials</li>
+                    <li>You agree to provide accurate and complete registration information</li>
+                    <li>You must be at least 13 years old to create an account</li>
+                    <li>You are responsible for all activities that occur under your account</li>
+                </ul>
+            </div>
+            
+            <div class="terms-section" id="intellectual">
+                <h2><i class="fas fa-copyright"></i> 4. Intellectual Property</h2>
+                <div class="highlight-box">
+                    <h3>Your Content</h3>
+                    <p>You retain ownership of any content you input into SEOTuber (topics, keywords, video URLs). By using the App, you grant us a limited license to process this content solely to provide the services.</p>
+                </div>
+                
+                <div class="highlight-box">
+                    <h3>Our Intellectual Property</h3>
+                    <p>All rights, title, and interest in the App (including algorithms, interfaces, and generated outputs) are owned by SEOTuber. You may not reverse engineer, decompile, or disassemble any portion of the App.</p>
+                </div>
+                
+                <div class="warning-box">
+                    <i class="fas fa-ban"></i>
+                    <div>
+                        <h3>Prohibited Use of Outputs</h3>
+                        <p>Generated titles, keywords, tags, or scores must not be used for:</p>
+                        <ul>
+                            <li>Illegal activities or content that violates YouTube's policies</li>
+                            <li>Spam, phishing, or malware distribution</li>
+                            <li>Harassment, hate speech, or defamation</li>
+                            <li>Automated scraping or data collection without permission</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="terms-section" id="acceptable-use">
+                <h2><i class="fas fa-check"></i> 5. Acceptable Use</h2>
+                <p>You agree to use SEOTuber only for lawful purposes related to YouTube content optimization. Acceptable use includes:</p>
+                <ul>
+                    <li>Researching keywords for your own YouTube content</li>
+                    <li>Generating title ideas for videos you create</li>
+                    <li>Analyzing SEO for videos you own or have permission to analyze</li>
+                    <li>Extracting tags for educational or research purposes</li>
+                </ul>
+            </div>
+            
+            <div class="terms-section" id="prohibited">
+                <h2><i class="fas fa-ban"></i> 6. Prohibited Activities</h2>
+                <p>You expressly agree not to:</p>
+                
+                <div class="warning-box">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <div>
+                        <h3>Misuse of Features</h3>
+                        <ul>
+                            <li>Use the Title Generator to create misleading, clickbait, or inappropriate titles</li>
+                            <li>Employ the Keyword Research tool for competitive intelligence gathering beyond fair use</li>
+                            <li>Utilize the SEO Checker to harass other creators or negatively impact competitors</li>
+                            <li>Use the Tag Extractor to steal proprietary tagging strategies</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="warning-box">
+                    <i class="fas fa-gavel"></i>
+                    <div>
+                        <h3>General Prohibitions</h3>
+                        <ul>
+                            <li>Violate YouTube's Terms of Service or any applicable laws</li>
+                            <li>Reverse engineer, decompile, or hack the App</li>
+                            <li>Use automated scripts to extract data from the App</li>
+                            <li>Impersonate any person or entity</li>
+                            <li>Introduce viruses, malware, or other harmful code</li>
+                            <li>Interfere with the App's operation or servers</li>
+                            <li>Use the App for any unauthorized commercial purposes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="terms-section" id="content">
+                <h2><i class="fas fa-file-alt"></i> 7. Content Responsibility</h2>
+                <p>You are solely responsible for:</p>
+                <ul>
+                    <li>All content you input into SEOTuber</li>
+                    <li>How you use the outputs generated by the App</li>
+                    <li>Ensuring your use complies with YouTube's Terms of Service</li>
+                    <li>Any consequences of using the App's suggestions</li>
+                </ul>
+                
+                <div class="highlight-box">
+                    <h3>Content Guidelines</h3>
+                    <p>You agree not to input or generate content that:</p>
+                    <ul>
+                        <li>Infringes on intellectual property rights</li>
+                        <li>Is unlawful, threatening, or harassing</li>
+                        <li>Contains hate speech or promotes discrimination</li>
+                        <li>Is sexually explicit or pornographic</li>
+                        <li>Promotes illegal activities or violence</li>
+                        <li>Contains private information of third parties</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="terms-section" id="third-party">
+                <h2><i class="fas fa-external-link-alt"></i> 8. Third-Party Services</h2>
+                <p>SEOTuber may integrate with or rely on third-party services, including:</p>
+                <ul>
+                    <li>YouTube API Services</li>
+                    <li>Advertising networks</li>
+                    <li>Analytics providers</li>
+                    <li>Cloud hosting services</li>
+                </ul>
+                
+                <div class="warning-box">
+                    <i class="fas fa-shield-alt"></i>
+                    <div>
+                        <h3>Third-Party Terms</h3>
+                        <p>Your use of SEOTuber is subject to YouTube's Terms of Service. By using our SEO Checker and Tag Extractor features, you agree to comply with YouTube's API Services Terms of Service.</p>
+                        <p>We are not responsible for the practices of third-party services integrated with SEOTuber.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="terms-section" id="disclaimer">
+                <h2><i class="fas fa-exclamation-triangle"></i> 9. Disclaimers</h2>
+                <div class="warning-box">
+                    <i class="fas fa-chart-line"></i>
+                    <div>
+                        <h3>Accuracy Disclaimer</h3>
+                        <p>SEOTuber provides all services "as is" without warranties of any kind. Specifically:</p>
+                        <ul>
+                            <li>Keyword volume and competition metrics are estimates only</li>
+                            <li>SEO scores are algorithmic evaluations, not professional advice</li>
+                            <li>Generated titles are suggestions, not guaranteed to improve performance</li>
+                            <li>Extracted tags may not represent complete or optimal tagging strategies</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <p>We do not guarantee that SEOTuber will:</p>
+                <ul>
+                    <li>Improve your YouTube rankings or viewership</li>
+                    <li>Be error-free or available at all times</li>
+                    <li>Meet your specific requirements</li>
+                    <li>Provide accurate or complete data</li>
+                </ul>
+            </div>
+            
+            <div class="terms-section" id="liability">
+                <h2><i class="fas fa-balance-scale"></i> 10. Limitation of Liability</h2>
+                <div class="highlight-box">
+                    <p>To the maximum extent permitted by law, SEOTuber shall not be liable for:</p>
+                    <ul>
+                        <li>Any direct, indirect, incidental, or consequential damages</li>
+                        <li>Loss of profits, data, or business opportunities</li>
+                        <li>Damages resulting from your use or inability to use the App</li>
+                        <li>Any misuse of the App's features or outputs</li>
+                        <li>Unauthorized access to or alteration of your data</li>
+                    </ul>
+                </div>
+                
+                <div class="warning-box">
+                    <i class="fas fa-user-shield"></i>
+                    <div>
+                        <h3>User Responsibility</h3>
+                        <p>You understand and agree that:</p>
+                        <ul>
+                            <li>Any reliance on the App's outputs is at your own risk</li>
+                            <li>You are solely responsible for decisions made based on the App's suggestions</li>
+                            <li>SEOTuber is not liable for penalties from YouTube or other platforms</li>
+                            <li>Monetization outcomes are not guaranteed</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="terms-section" id="indemnification">
+                <h2><i class="fas fa-handshake"></i> 11. Indemnification</h2>
+                <p>You agree to indemnify and hold harmless SEOTuber, its owners, and affiliates from:</p>
+                <ul>
+                    <li>Any claims arising from your use of the App</li>
+                    <li>Your violation of these Terms</li>
+                    <li>Your infringement of any third-party rights</li>
+                    <li>Any content you input or generate through the App</li>
+                    <li>Your violation of YouTube's Terms of Service</li>
+                </ul>
+            </div>
+            
+            <div class="terms-section" id="termination">
+                <h2><i class="fas fa-power-off"></i> 12. Termination</h2>
+                <p>We reserve the right to terminate or suspend your access to SEOTuber:</p>
+                <ul>
+                    <li>Immediately for violations of these Terms</li>
+                    <li>With reasonable notice for operational reasons</li>
+                    <li>At our sole discretion for any reason</li>
+                </ul>
+                
+                <div class="warning-box">
+                    <i class="fas fa-ban"></i>
+                    <div>
+                        <h3>Termination for Misuse</h3>
+                        <p>Your access may be terminated immediately if we determine you have:</p>
+                        <ul>
+                            <li>Used the App for spam or black-hat SEO techniques</li>
+                            <li>Violated YouTube's Terms of Service using our tools</li>
+                            <li>Engaged in automated scraping or excessive requests</li>
+                            <li>Attempted to reverse engineer our algorithms</li>
+                            <li>Distributed malicious content generated by the App</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="terms-section" id="changes">
+                <h2><i class="fas fa-sync-alt"></i> 13. Changes to Terms</h2>
+                <p>We may update these Terms at any time. We will notify you of significant changes through:</p>
+                <ul>
+                    <li>In-app notifications</li>
+                    <li>Email (if you have an account)</li>
+                    <li>Updated "Last Updated" date at the top of this document</li>
+                </ul>
+                <p>Your continued use of SEOTuber after changes constitutes acceptance of the modified Terms.</p>
+            </div>
+            
+            <div class="terms-section" id="governing">
+                <h2><i class="fas fa-balance-scale"></i> 14. Governing Law</h2>
+                <p>These Terms shall be governed by the laws of the jurisdiction where SEOTuber is based, without regard to conflict of law principles.</p>
+            </div>
+            
+            <div class="terms-section" id="contact">
+                <h2><i class="fas fa-envelope"></i> 15. Contact Information</h2>
+                <p>For questions about these Terms and Conditions, please contact us:</p>
+                
+                <div class="contact-box">
+                    <h3>Contact Our Legal Team</h3>
+                    <p>We're available to address any concerns regarding these terms</p>
+                    <a href="mailto:c.g.s.hassan.ali@gmail.com" class="contact-email">
+                        <i class="fas fa-paper-plane"></i> c.g.s.hassan.ali@gmail.com
+                    </a>
+                    <p>Please allow 3-5 business days for a response</p>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>SEOTuber &copy; 2025. All rights reserved. | These Terms and Conditions are effective as of June 4, 2025</p>
+        </footer>
+    </div>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Highlight current section in TOC
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.terms-section');
+            const navLinks = document.querySelectorAll('.toc-card a');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.scrollY >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Initialize on page load
+        window.dispatchEvent(new Event('scroll'));
+    </script>
+</body>
+</html>
