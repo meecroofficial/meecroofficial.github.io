@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Meecro - Creator of SEOTuber</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #2E8B57;  /* Sea green */
+            --primary-light: #3CB371;
+            --secondary: #FF7F50;  /* Coral */
+            --accent: #4682B4;  /* Steel blue */
+            --light: #F8F9FA;
+            --dark: #2D3748;
+            --text: #4A5568;
+            --light-gray: #E2E8F0;
+            --border-radius: 16px;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text);
+            line-height: 1.7;
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            font-weight: 600;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 80px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 60px;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+        
+        .header-wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="white"></path></svg>');
+            background-size: cover;
+        }
+        
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.15);
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 25px;
+            backdrop-filter: blur(5px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .logo i {
+            font-size: 2.8rem;
+            color: white;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-weight: 300;
+        }
+        
+        /* Hero Section */
+        .hero {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 80px;
+            flex-wrap: wrap;
+        }
+        
+        .hero-content {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+        }
+        
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+            background: linear-gradient(45deg, var(--primary-light), var(--accent));
+            border-radius: var(--border-radius);
+            height: 400px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .hero-image::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="none"/><path d="M45,20 Q100,5 155,20 L180,180 Q100,195 20,180 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+        
+        .hero-image-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            text-align: center;
+            color: white;
+            z-index: 2;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        h2:after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 70px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        p {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            color: var(--text);
+        }
+        
+        /* Mission Section */
+        .mission {
+            background: linear-gradient(135deg, #F0FFF0 0%, #E6F6FF 100%);
+            border-radius: var(--border-radius);
+            padding: 60px 40px;
+            margin: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .mission-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        
+        /* Features Grid */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 35px 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-left: 5px solid var(--primary);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Developer Profile */
+        .developer {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            margin: 80px 0;
+            flex-wrap: wrap;
+            background: white;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .dev-image {
+            flex: 1;
+            min-width: 300px;
+            height: 400px;
+            background: linear-gradient(45deg, var(--accent), var(--primary));
+            border-radius: var(--border-radius);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+        
+        .dev-name {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.6rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+        
+        .dev-info {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .social-link {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--light-gray);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+        
+        .social-link:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        /* Future Section */
+        .future {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 80px 40px;
+            text-align: center;
+            border-radius: var(--border-radius);
+            margin: 80px 0;
+            box-shadow: var(--shadow);
+        }
+        
+        .future h2 {
+            color: white;
+        }
+        
+        .future h2:after {
+            background: var(--secondary);
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 60px 40px;
+            text-align: center;
+            margin: 60px auto;
+            max-width: 700px;
+            box-shadow: var(--shadow);
+        }
+        
+        .contact-email {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: var(--transition);
+            font-size: 1.1rem;
+            border: 2px solid var(--primary);
+        }
+        
+        .contact-email:hover {
+            background: transparent;
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 80px;
+        }
+        
+        footer p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 0;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.4rem;
+            }
+            
+            .hero-image {
+                height: 350px;
+            }
+            
+            .dev-image {
+                height: 350px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                padding: 60px 0 80px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .logo {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .logo i {
+                font-size: 2rem;
+            }
+            
+            .mission {
+                padding: 40px 20px;
+            }
+            
+            .developer {
+                padding: 30px;
+            }
+            
+            .future {
+                padding: 60px 20px;
+            }
+            
+            .contact {
+                padding: 40px 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            header {
+                padding: 50px 0 70px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-image {
+                height: 300px;
+            }
+            
+            .dev-image {
+                height: 300px;
+            }
+            
+            .feature-card {
+                padding: 25px 20px;
+            }
+            
+            .developer {
+                margin: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-lightbulb"></i>
+            </div>
+            <h1>About Meecro</h1>
+            <p class="subtitle">The story behind SEOTuber and the developer who created it</p>
+        </div>
+        <div class="header-wave"></div>
+    </header>
+    
+    <div class="container">
+        <div class="hero">
+            <div class="hero-content">
+                <h2>What is Meecro?</h2>
+                <p>Meecro isn't a big company or a team of developers. It's just me - Hassan Ali - a passionate developer who loves creating tools that solve real problems.</p>
+                <p>The name "Meecro" represents my approach to development: creating micro-tools that make macro differences in people's daily workflows. Each tool I build aims to simplify a specific task that might otherwise be complicated or time-consuming.</p>
+                <p>After completing my secondary education, I decided to focus on building practical applications that help content creators, starting with SEOTuber for YouTube optimization. My goal is to create tools that are powerful yet simple to use, without the complexity of enterprise software.</p>
+            </div>
+            
+            <div class="hero-image">
+                <div class="hero-image-content">
+                    <h2 style="color: white;">Simplifying YouTube SEO for Creators</h2>
+                    <p>SEOTuber was born from a passion to create tools that make everyday tasks easier</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mission">
+            <div class="mission-icon">
+                <i class="fas fa-bullseye"></i>
+            </div>
+            <h2>Our Mission</h2>
+            <p style="font-size: 1.4rem; max-width: 800px; margin: 20px auto 0;">To create intuitive tools that simplify complex tasks, enabling creators to focus on what they do best - creating amazing content.</p>
+        </div>
+        
+        <h2 style="text-align: center; margin: 60px 0 40px;">Why I Created SEOTuber</h2>
+        
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Simplify SEO</h3>
+                <p>I noticed how complicated YouTube SEO tools were for new creators. SEOTuber makes optimization accessible to everyone.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-stopwatch"></i>
+                </div>
+                <h3>Save Time</h3>
+                <p>Creating titles, researching keywords, and analyzing SEO shouldn't take hours. SEOTuber streamlines these processes.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3>Learning Opportunity</h3>
+                <p>As a recent graduate, building SEOTuber allowed me to apply my programming skills to solve real-world problems.</p>
+            </div>
+        </div>
+        
+        <div class="developer">
+            <div class="dev-image">
+                <div class="dev-name">Hassan Ali</div>
+            </div>
+            
+            <div class="dev-info">
+                <h2>Founder & Developer</h2>
+                <p>Hello! I'm Hassan Ali, the creator behind Meecro and SEOTuber. I recently completed my secondary education and have been passionate about programming since I was 14 years old.</p>
+                
+                <p>I started developing SEOTuber when I noticed how many YouTubers struggle with optimizing their content. As a developer and content consumer myself, I wanted to create a solution that would make SEO accessible to everyone, regardless of their technical knowledge.</p>
+                
+                <p>My development philosophy is simple: create tools that do one thing exceptionally well. SEOTuber focuses specifically on YouTube SEO without unnecessary features that complicate the experience.</p>
+                
+                <div class="social-links">
+                    <a href="#" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="future">
+            <h2>The Future of Meecro</h2>
+            <p style="font-size: 1.2rem; max-width: 700px; margin: 20px auto 0;">I'm just getting started! As an independent developer, I plan to create more micro-tools that solve specific problems for content creators, students, and professionals. Each tool will follow the same principles: simplicity, effectiveness, and accessibility.</p>
+        </div>
+        
+        <div class="contact">
+            <h2>Get in Touch</h2>
+            <p>Have questions about SEOTuber or ideas for future tools? I'd love to hear from you!</p>
+            
+            <a href="mailto:c.g.s.hassan.ali@gmail.com" class="contact-email">
+                <i class="fas fa-paper-plane"></i> c.g.s.hassan.ali@gmail.com
+            </a>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>Meecro &copy; 2025 | Simplifying everyday tasks through innovative micro-tools</p>
+            <p>SEOTuber - Your YouTube SEO Companion</p>
+        </div>
+    </footer>
+</body>
+</html>
