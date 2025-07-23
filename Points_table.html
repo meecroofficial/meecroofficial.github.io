@@ -906,37 +906,8 @@
     </style>
 </head>
 <body>
-    <!-- Copyright Notice Popup -->
-    <div class="copyright-popup" id="copyrightPopup">
-        <div class="copyright-container">
-            <div class="copyright-header">
-                <i class="fas fa-copyright"></i>
-                <h1>Design Copyright</h1>
-                <p>Important Legal Information</p>
-            </div>
-            
-            <div class="copyright-content">
-                <p>This tournament point table design is the exclusive intellectual property of:</p>
-                
-                <strong>Hassan Ali</strong>
-                
-                <p>© Copyright 2025. All rights reserved.</p>
-                
-                <div class="copyright-warning">
-                    <i class="fas fa-exclamation-triangle"></i> Unauthorized reproduction, modification, distribution, or use of this design is strictly prohibited and will result in legal action.
-                </div>
-                
-                <p>This design is protected under international copyright laws. Any violation will be pursued to the fullest extent of the law.</p>
-            </div>
-            
-            <div class="copyright-buttons">
-                <button class="copyright-btn" onclick="acceptCopyright()">
-                    <i class="fas fa-check-circle"></i> I Understand
-                </button>
-            </div>
-        </div>
-    </div>
-    
+  
+           
     <div class="pubg-overlay"></div>
     
     <div class="container" id="mainContainer">
@@ -1236,23 +1207,7 @@
             </div>
         </div>
     </div>
-    
-    <script>
-        // Copyright notice functions
-        function acceptCopyright() {
-            document.getElementById('copyrightPopup').classList.add('hidden');
-            document.getElementById('mainContainer').classList.remove('blurred');
-            localStorage.setItem('copyrightAccepted', 'true');
-        }
-        
-        // Check if user has already accepted
-        window.onload = function() {
-            if(localStorage.getItem('copyrightAccepted') === 'true') {
-                document.getElementById('copyrightPopup').classList.add('hidden');
-            } else {
-                document.getElementById('mainContainer').classList.add('blurred');
-            }
-        }
+
         
         // Tab switching function
         function switchTab(tabId) {
