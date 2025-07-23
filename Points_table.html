@@ -17,12 +17,36 @@
             background: linear-gradient(135deg, #0c1a2d, #0f2a3f);
             color: #fff;
             min-height: 100vh;
-            padding: 15px;
+            padding: 15px 15px 60px;
+            position: relative;
+            background-image: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop');
+            background-blend-mode: multiply;
+            background-size: cover;
+        }
+        
+        .legal-notice {
+            background: linear-gradient(to right, #b30000, #800000);
+            color: white;
+            text-align: center;
+            padding: 12px;
+            font-size: 0.9rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            border-bottom: 2px solid #ffcc00;
+        }
+        
+        .legal-notice strong {
+            color: #ffcc00;
+            font-weight: 700;
         }
         
         .container {
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 50px auto 0;
         }
         
         header {
@@ -366,17 +390,113 @@
             color: #cd7f32;
         }
         
-        .footer {
+        .copyright {
             text-align: center;
             padding: 20px;
             color: #00c3ff;
             font-size: 0.85rem;
             border-top: 1px solid rgba(0, 195, 255, 0.2);
             margin-top: 30px;
+            background: rgba(0, 20, 40, 0.7);
+            border-radius: 10px;
+        }
+        
+        .copyright strong {
+            color: #ffcc00;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+        
+        /* Prize distribution section */
+        .prize-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .prize-card {
+            background: rgba(0, 20, 40, 0.7);
+            border: 1px solid rgba(0, 195, 255, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+        
+        .prize-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .prize-rank {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            background: linear-gradient(to right, #ffcc00, #ff9900);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .prize-amount {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ffcc00;
+            margin: 10px 0;
+        }
+        
+        .prize-desc {
+            color: #00c3ff;
+            font-size: 0.9rem;
+        }
+        
+        /* Rules section */
+        .rules-container {
+            background: rgba(0, 20, 40, 0.7);
+            border: 1px solid rgba(0, 195, 255, 0.3);
+            border-radius: 10px;
+            padding: 25px;
+            margin-top: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+        
+        .rules-list {
+            margin-top: 15px;
+        }
+        
+        .rules-list li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            line-height: 1.5;
+        }
+        
+        .rules-list li:before {
+            content: "•";
+            color: #ffcc00;
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+        
+        .rule-highlight {
+            color: #ff6666;
+            font-weight: bold;
         }
         
         /* Mobile specific adjustments */
         @media (max-width: 768px) {
+            .legal-notice {
+                font-size: 0.8rem;
+                padding: 10px;
+            }
+            
+            .container {
+                margin-top: 40px;
+            }
+            
             header h1 {
                 font-size: 2rem;
             }
@@ -426,12 +546,20 @@
                 font-size: 0.85rem;
             }
             
-            .top-killers {
+            .top-killers, .prize-cards {
                 grid-template-columns: 1fr;
+            }
+            
+            .rules-list li {
+                padding-left: 20px;
             }
         }
         
         @media (max-width: 480px) {
+            .legal-notice {
+                font-size: 0.7rem;
+            }
+            
             header h1 {
                 font-size: 1.7rem;
             }
@@ -461,10 +589,26 @@
             .player-name {
                 font-size: 0.8rem;
             }
+            
+            .prize-card {
+                padding: 15px;
+            }
+            
+            .prize-rank {
+                font-size: 1.7rem;
+            }
+            
+            .prize-amount {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="legal-notice">
+        <i class="fas fa-exclamation-circle"></i> <strong>LEGAL NOTICE:</strong> This point table is created by Hassan Ali. All rights are reserved. Any unauthorized modification, distribution, or use of this design will result in legal action. © 2025
+    </div>
+    
     <div class="container">
         <header>
             <h1><i class="fas fa-crosshairs"></i> PUBG Mobile Tournament</h1>
@@ -484,7 +628,7 @@
                     <p>2</p>
                 </div>
                 <div class="info-card">
-                    <h3>Prize Pool</h3>
+                    <h3>Total Prize</h3>
                     <p>3500 PKR</p>
                 </div>
             </div>
@@ -493,10 +637,12 @@
         <div class="tabs">
             <button class="tab-btn active" onclick="switchTab('team-standings')">Team Standings</button>
             <button class="tab-btn" onclick="switchTab('top-killers')">Top Killers</button>
+            <button class="tab-btn" onclick="switchTab('prize-distribution')">Prize Distribution</button>
+            <button class="tab-btn" onclick="switchTab('rules')">Tournament Rules</button>
         </div>
         
         <div class="tab-content active" id="team-standings">
-            <h2 class="section-title">Team Standings - After Match 5</h2>
+            <h2 class="section-title">Team Standings - After 1st Match</h2>
             
             <div class="table-container">
                 <table>
@@ -518,9 +664,9 @@
                                 <span class="player-name">ShadowHunter</span>
                                 <span class="player-name">PhantomShot</span>
                             </td>
-                            <td class="points place-points">60</td>
-                            <td class="points kill-points">68</td>
-                            <td class="points total-points">128</td>
+                            <td class="points place-points">22</td>
+                            <td class="points kill-points">15</td>
+                            <td class="points total-points">37</td>
                         </tr>
                         <tr class="silver-row">
                             <td class="team-rank">2</td>
@@ -529,9 +675,9 @@
                                 <span class="player-name">DeathDealer</span>
                                 <span class="player-name">SniperWolf</span>
                             </td>
-                            <td class="points place-points">58</td>
-                            <td class="points kill-points">63</td>
-                            <td class="points total-points">121</td>
+                            <td class="points place-points">20</td>
+                            <td class="points kill-points">14</td>
+                            <td class="points total-points">34</td>
                         </tr>
                         <tr class="bronze-row">
                             <td class="team-rank">3</td>
@@ -540,9 +686,9 @@
                                 <span class="player-name">ThunderStrike</span>
                                 <span class="player-name">NightFury</span>
                             </td>
-                            <td class="points place-points">56</td>
-                            <td class="points kill-points">59</td>
-                            <td class="points total-points">115</td>
+                            <td class="points place-points">18</td>
+                            <td class="points kill-points">12</td>
+                            <td class="points total-points">30</td>
                         </tr>
                         <tr>
                             <td class="team-rank">4</td>
@@ -551,9 +697,9 @@
                                 <span class="player-name">SilentAssassin</span>
                                 <span class="player-name">DarkKnight</span>
                             </td>
-                            <td class="points place-points">52</td>
-                            <td class="points kill-points">56</td>
-                            <td class="points total-points">108</td>
+                            <td class="points place-points">16</td>
+                            <td class="points kill-points">11</td>
+                            <td class="points total-points">27</td>
                         </tr>
                         <tr>
                             <td class="team-rank">5</td>
@@ -562,9 +708,9 @@
                                 <span class="player-name">FireBird</span>
                                 <span class="player-name">AshBringer</span>
                             </td>
-                            <td class="points place-points">48</td>
-                            <td class="points kill-points">54</td>
-                            <td class="points total-points">102</td>
+                            <td class="points place-points">15</td>
+                            <td class="points kill-points">10</td>
+                            <td class="points total-points">25</td>
                         </tr>
                         <tr>
                             <td class="team-rank">6</td>
@@ -573,9 +719,9 @@
                                 <span class="player-name">BladeMaster</span>
                                 <span class="player-name">DragonFire</span>
                             </td>
-                            <td class="points place-points">47</td>
-                            <td class="points kill-points">51</td>
-                            <td class="points total-points">98</td>
+                            <td class="points place-points">14</td>
+                            <td class="points kill-points">9</td>
+                            <td class="points total-points">23</td>
                         </tr>
                         <tr>
                             <td class="team-rank">7</td>
@@ -584,9 +730,9 @@
                                 <span class="player-name">IronMan</span>
                                 <span class="player-name">WarMachine</span>
                             </td>
-                            <td class="points place-points">44</td>
-                            <td class="points kill-points">50</td>
-                            <td class="points total-points">94</td>
+                            <td class="points place-points">13</td>
+                            <td class="points kill-points">8</td>
+                            <td class="points total-points">21</td>
                         </tr>
                         <tr>
                             <td class="team-rank">8</td>
@@ -595,9 +741,9 @@
                                 <span class="player-name">IceQueen</span>
                                 <span class="player-name">FrostBite</span>
                             </td>
-                            <td class="points place-points">42</td>
-                            <td class="points kill-points">48</td>
-                            <td class="points total-points">90</td>
+                            <td class="points place-points">12</td>
+                            <td class="points kill-points">7</td>
+                            <td class="points total-points">19</td>
                         </tr>
                         <tr>
                             <td class="team-rank">9</td>
@@ -606,9 +752,9 @@
                                 <span class="player-name">SandStorm</span>
                                 <span class="player-name">Mirage</span>
                             </td>
-                            <td class="points place-points">42</td>
-                            <td class="points kill-points">44</td>
-                            <td class="points total-points">86</td>
+                            <td class="points place-points">11</td>
+                            <td class="points kill-points">6</td>
+                            <td class="points total-points">17</td>
                         </tr>
                         <tr>
                             <td class="team-rank">10</td>
@@ -617,9 +763,9 @@
                                 <span class="player-name">Neo</span>
                                 <span class="player-name">Trinity</span>
                             </td>
-                            <td class="points place-points">41</td>
-                            <td class="points kill-points">42</td>
-                            <td class="points total-points">83</td>
+                            <td class="points place-points">10</td>
+                            <td class="points kill-points">5</td>
+                            <td class="points total-points">15</td>
                         </tr>
                         <tr>
                             <td class="team-rank">11</td>
@@ -628,9 +774,9 @@
                                 <span class="player-name">Atlas</span>
                                 <span class="player-name">Kronos</span>
                             </td>
-                            <td class="points place-points">37</td>
-                            <td class="points kill-points">41</td>
-                            <td class="points total-points">78</td>
+                            <td class="points place-points">9</td>
+                            <td class="points kill-points">4</td>
+                            <td class="points total-points">13</td>
                         </tr>
                         <tr>
                             <td class="team-rank">12</td>
@@ -639,9 +785,9 @@
                                 <span class="player-name">MoonWalker</span>
                                 <span class="player-name">LoneWolf</span>
                             </td>
-                            <td class="points place-points">36</td>
-                            <td class="points kill-points">38</td>
-                            <td class="points total-points">74</td>
+                            <td class="points place-points">8</td>
+                            <td class="points kill-points">4</td>
+                            <td class="points total-points">12</td>
                         </tr>
                         <tr>
                             <td class="team-rank">13</td>
@@ -650,9 +796,9 @@
                                 <span class="player-name">SkyLord</span>
                                 <span class="player-name">WindRider</span>
                             </td>
-                            <td class="points place-points">34</td>
-                            <td class="points kill-points">36</td>
-                            <td class="points total-points">70</td>
+                            <td class="points place-points">7</td>
+                            <td class="points kill-points">3</td>
+                            <td class="points total-points">10</td>
                         </tr>
                         <tr>
                             <td class="team-rank">14</td>
@@ -661,9 +807,9 @@
                                 <span class="player-name">Poseidon</span>
                                 <span class="player-name">Neptune</span>
                             </td>
-                            <td class="points place-points">31</td>
-                            <td class="points kill-points">34</td>
-                            <td class="points total-points">65</td>
+                            <td class="points place-points">6</td>
+                            <td class="points kill-points">3</td>
+                            <td class="points total-points">9</td>
                         </tr>
                         <tr>
                             <td class="team-rank">15</td>
@@ -672,9 +818,9 @@
                                 <span class="player-name">GreenArrow</span>
                                 <span class="player-name">WildCat</span>
                             </td>
-                            <td class="points place-points">28</td>
-                            <td class="points kill-points">32</td>
-                            <td class="points total-points">60</td>
+                            <td class="points place-points">5</td>
+                            <td class="points kill-points">2</td>
+                            <td class="points total-points">7</td>
                         </tr>
                         <tr>
                             <td class="team-rank">16</td>
@@ -683,9 +829,9 @@
                                 <span class="player-name">Rocky</span>
                                 <span class="player-name">Summit</span>
                             </td>
-                            <td class="points place-points">27</td>
-                            <td class="points kill-points">28</td>
-                            <td class="points total-points">55</td>
+                            <td class="points place-points">4</td>
+                            <td class="points kill-points">1</td>
+                            <td class="points total-points">5</td>
                         </tr>
                     </tbody>
                 </table>
@@ -693,7 +839,7 @@
         </div>
         
         <div class="tab-content" id="top-killers">
-            <h2 class="section-title">Top Killers</h2>
+            <h2 class="section-title">Top Killers - After 1st Match</h2>
             
             <div class="top-killers">
                 <div class="killer-card gold-killer">
@@ -703,7 +849,7 @@
                         <div class="killer-team">Alpha Warriors</div>
                     </div>
                     <div class="killer-stats">
-                        <div class="kills-count">42</div>
+                        <div class="kills-count">9</div>
                         <div class="kills-label">Kills</div>
                     </div>
                 </div>
@@ -715,7 +861,7 @@
                         <div class="killer-team">Victory X</div>
                     </div>
                     <div class="killer-stats">
-                        <div class="kills-count">38</div>
+                        <div class="kills-count">8</div>
                         <div class="kills-label">Kills</div>
                     </div>
                 </div>
@@ -727,7 +873,7 @@
                         <div class="killer-team">Storm Riders</div>
                     </div>
                     <div class="killer-stats">
-                        <div class="kills-count">35</div>
+                        <div class="kills-count">7</div>
                         <div class="kills-label">Kills</div>
                     </div>
                 </div>
@@ -739,7 +885,7 @@
                         <div class="killer-team">Ghost Reapers</div>
                     </div>
                     <div class="killer-stats">
-                        <div class="kills-count">33</div>
+                        <div class="kills-count">6</div>
                         <div class="kills-label">Kills</div>
                     </div>
                 </div>
@@ -751,7 +897,7 @@
                         <div class="killer-team">Phoenix Force</div>
                     </div>
                     <div class="killer-stats">
-                        <div class="kills-count">31</div>
+                        <div class="kills-count">5</div>
                         <div class="kills-label">Kills</div>
                     </div>
                 </div>
@@ -763,7 +909,7 @@
                         <div class="killer-team">Dragon Blades</div>
                     </div>
                     <div class="killer-stats">
-                        <div class="kills-count">30</div>
+                        <div class="kills-count">5</div>
                         <div class="kills-label">Kills</div>
                     </div>
                 </div>
@@ -775,7 +921,7 @@
                         <div class="killer-team">Alpha Warriors</div>
                     </div>
                     <div class="killer-stats">
-                        <div class="kills-count">29</div>
+                        <div class="kills-count">4</div>
                         <div class="kills-label">Kills</div>
                     </div>
                 </div>
@@ -787,15 +933,77 @@
                         <div class="killer-team">Victory X</div>
                     </div>
                     <div class="killer-stats">
-                        <div class="kills-count">28</div>
+                        <div class="kills-count">4</div>
                         <div class="kills-label">Kills</div>
                     </div>
                 </div>
             </div>
         </div>
         
-        <div class="footer">
-            <p>PUBG Mobile Tournament Leaderboard | Created by Fury Master & The Dodger | © 2023 All Rights Reserved</p>
+        <div class="tab-content" id="prize-distribution">
+            <h2 class="section-title">Prize Distribution</h2>
+            
+            <div class="prize-cards">
+                <div class="prize-card">
+                    <div class="prize-rank">1st Place</div>
+                    <div class="prize-amount">2000 PKR</div>
+                    <div class="prize-desc">Champion Team</div>
+                </div>
+                
+                <div class="prize-card">
+                    <div class="prize-rank">2nd Place</div>
+                    <div class="prize-amount">1000 PKR</div>
+                    <div class="prize-desc">Runner-up Team</div>
+                </div>
+                
+                <div class="prize-card">
+                    <div class="prize-rank">3rd Place</div>
+                    <div class="prize-amount">500 PKR</div>
+                    <div class="prize-desc">Second Runner-up</div>
+                </div>
+                
+                <div class="prize-card">
+                    <div class="prize-rank">Top Killer</div>
+                    <div class="prize-amount">500 PKR</div>
+                    <div class="prize-desc">Player with most kills</div>
+                </div>
+            </div>
+            
+            <div class="copyright" style="margin-top: 30px;">
+                <strong>Total Prize Pool: 3500 PKR</strong>
+                <p>Prizes will be distributed within 3 days after tournament completion</p>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="rules">
+            <h2 class="section-title">Tournament Rules & Regulations</h2>
+            
+            <div class="rules-container">
+                <h3 style="color: #ffcc00; margin-bottom: 15px; text-align: center;">Important Rules for All Participants</h3>
+                
+                <ul class="rules-list">
+                    <li>All players must use their registered PUBG Mobile accounts. No account sharing is allowed.</li>
+                    <li>Matches will be played in <span class="rule-highlight">TPP Squad</span> mode on the <span class="rule-highlight">Erangel</span> map.</li>
+                    <li>Any form of cheating, hacking, or using third-party applications will result in <span class="rule-highlight">immediate disqualification</span>.</li>
+                    <li>Teaming up with enemy squads is <span class="rule-highlight">strictly prohibited</span>. Players caught teaming will be banned from the tournament.</li>
+                    <li>Players must join the match lobby within <span class="rule-highlight">10 minutes</span> of the scheduled time.</li>
+                    <li>In case of a disconnect, the player must reconnect immediately. The match will not be restarted.</li>
+                    <li>Point calculation: <span class="rule-highlight">Place Points</span> based on final position, <span class="rule-highlight">Kill Points</span> (1 per kill).</li>
+                    <li>Players must maintain sportsmanlike conduct. Toxic behavior may lead to disqualification.</li>
+                    <li>All decisions by tournament administrators are <span class="rule-highlight">final and binding</span>.</li>
+                    <li>Prize money will be distributed via <span class="rule-highlight">EasyPaisa/JazzCash</span> within 3 working days after tournament completion.</li>
+                </ul>
+                
+                <div style="margin-top: 20px; padding: 15px; background: rgba(255, 0, 0, 0.1); border-radius: 8px; border-left: 3px solid #ff6666;">
+                    <h4 style="color: #ff6666; margin-bottom: 10px;"><i class="fas fa-exclamation-triangle"></i> Zero Tolerance Policy</h4>
+                    <p>Any violation of these rules will result in immediate disqualification of the entire team without refund of entry fee. Repeated offenses may lead to permanent ban from future tournaments.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <strong>Copyright Notice:</strong>
+            <p>This point table design is the intellectual property of Hassan Ali. Any unauthorized reproduction, modification, or distribution will be met with legal action. © 2025 All Rights Reserved</p>
         </div>
     </div>
     
