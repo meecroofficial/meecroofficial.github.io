@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUBG Mobile Tournament - Point Table</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0c1a2d, #0f2a3f);
+            color: #fff;
+            min-height: 100vh;
+            padding: 15px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 20px 0 10px;
+            position: relative;
+            margin-bottom: 15px;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 15px rgba(0, 195, 255, 0.7);
+            background: linear-gradient(to right, #ffcc00, #ff9900);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+        }
+        
+        header h1::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 3px;
+            background: linear-gradient(to right, #00c3ff, #0077ff);
+            border-radius: 3px;
+        }
+        
+        .tournament-info {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .info-card {
+            background: rgba(0, 20, 40, 0.7);
+            border: 1px solid rgba(0, 195, 255, 0.3);
+            border-radius: 10px;
+            padding: 12px 15px;
+            text-align: center;
+            min-width: 140px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-3px);
+        }
+        
+        .info-card h3 {
+            color: #00c3ff;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .info-card p {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #ffcc00;
+        }
+        
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .tab-btn {
+            background: rgba(0, 20, 40, 0.7);
+            border: 1px solid rgba(0, 195, 255, 0.3);
+            color: #00c3ff;
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+        
+        .tab-btn.active {
+            background: linear-gradient(to right, #0077ff, #00c3ff);
+            color: #fff;
+            box-shadow: 0 0 15px rgba(0, 195, 255, 0.5);
+        }
+        
+        .tab-btn:hover {
+            background: rgba(0, 119, 255, 0.3);
+        }
+        
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section-title {
+            text-align: center;
+            margin: 20px 0 15px;
+            font-size: 1.6rem;
+            color: #ffcc00;
+            text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(to right, #ffcc00, #ff9900);
+            border-radius: 3px;
+        }
+        
+        .table-container {
+            background: rgba(0, 20, 40, 0.7);
+            border: 1px solid rgba(0, 195, 255, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            margin-bottom: 30px;
+            overflow-x: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 500px;
+        }
+        
+        th {
+            background: linear-gradient(to bottom, #003366, #001a33);
+            color: #00c3ff;
+            padding: 15px 12px;
+            text-align: left;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: sticky;
+            top: 0;
+            font-size: 0.9rem;
+        }
+        
+        th:first-child {
+            border-top-left-radius: 10px;
+        }
+        
+        th:last-child {
+            border-top-right-radius: 10px;
+        }
+        
+        td {
+            padding: 12px;
+            border-bottom: 1px solid rgba(0, 195, 255, 0.1);
+        }
+        
+        tr:nth-child(even) {
+            background: rgba(0, 30, 60, 0.4);
+        }
+        
+        tr:hover {
+            background: rgba(0, 119, 255, 0.2);
+        }
+        
+        .team-rank {
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-align: center;
+            color: #ffcc00;
+        }
+        
+        .team-name {
+            font-weight: bold;
+            color: #00c3ff;
+        }
+        
+        .player-name {
+            display: block;
+            margin: 4px 0;
+            color: #fff;
+            font-size: 0.9rem;
+        }
+        
+        .points {
+            font-weight: bold;
+            text-align: center;
+            font-size: 1rem;
+        }
+        
+        .total-points {
+            font-size: 1.2rem;
+            color: #ffcc00;
+        }
+        
+        .kill-points {
+            color: #ff6666;
+        }
+        
+        .place-points {
+            color: #66ff99;
+        }
+        
+        /* Top 3 styling */
+        .gold-row {
+            background: linear-gradient(to right, rgba(255, 215, 0, 0.15), rgba(0, 20, 40, 0.7)) !important;
+            border-left: 3px solid #ffd700;
+        }
+        
+        .silver-row {
+            background: linear-gradient(to right, rgba(192, 192, 192, 0.15), rgba(0, 20, 40, 0.7)) !important;
+            border-left: 3px solid #c0c0c0;
+        }
+        
+        .bronze-row {
+            background: linear-gradient(to right, rgba(205, 127, 50, 0.15), rgba(0, 20, 40, 0.7)) !important;
+            border-left: 3px solid #cd7f32;
+        }
+        
+        .gold-row .team-rank {
+            font-size: 1.3rem;
+            color: #ffd700;
+        }
+        
+        .silver-row .team-rank {
+            font-size: 1.3rem;
+            color: #c0c0c0;
+        }
+        
+        .bronze-row .team-rank {
+            font-size: 1.3rem;
+            color: #cd7f32;
+        }
+        
+        .top-killers {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .killer-card {
+            background: rgba(0, 20, 40, 0.7);
+            border: 1px solid rgba(255, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .killer-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(255, 0, 0, 0.7);
+        }
+        
+        .killer-rank {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: #ffcc00;
+            min-width: 40px;
+            text-align: center;
+        }
+        
+        .killer-info {
+            flex-grow: 1;
+            padding: 0 15px;
+        }
+        
+        .killer-name {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #ff6666;
+            margin-bottom: 3px;
+        }
+        
+        .killer-team {
+            color: #00c3ff;
+            font-size: 0.85rem;
+        }
+        
+        .killer-stats {
+            text-align: right;
+        }
+        
+        .kills-count {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: #ffcc00;
+        }
+        
+        .kills-label {
+            color: #ff6666;
+            font-size: 0.85rem;
+        }
+        
+        /* Top killer styling */
+        .gold-killer {
+            background: linear-gradient(to right, rgba(255, 215, 0, 0.15), rgba(0, 20, 40, 0.7)) !important;
+            border-left: 3px solid #ffd700;
+        }
+        
+        .silver-killer {
+            background: linear-gradient(to right, rgba(192, 192, 192, 0.15), rgba(0, 20, 40, 0.7)) !important;
+            border-left: 3px solid #c0c0c0;
+        }
+        
+        .bronze-killer {
+            background: linear-gradient(to right, rgba(205, 127, 50, 0.15), rgba(0, 20, 40, 0.7)) !important;
+            border-left: 3px solid #cd7f32;
+        }
+        
+        .gold-killer .killer-rank {
+            color: #ffd700;
+        }
+        
+        .silver-killer .killer-rank {
+            color: #c0c0c0;
+        }
+        
+        .bronze-killer .killer-rank {
+            color: #cd7f32;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #00c3ff;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(0, 195, 255, 0.2);
+            margin-top: 30px;
+        }
+        
+        /* Mobile specific adjustments */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .tournament-info {
+                gap: 10px;
+            }
+            
+            .info-card {
+                min-width: 120px;
+                padding: 10px;
+            }
+            
+            .info-card h3 {
+                font-size: 0.8rem;
+            }
+            
+            .info-card p {
+                font-size: 1.2rem;
+            }
+            
+            .tabs {
+                margin: 15px 0;
+            }
+            
+            .tab-btn {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+            
+            .section-title {
+                font-size: 1.4rem;
+                margin: 15px 0 10px;
+            }
+            
+            th {
+                padding: 12px 10px;
+                font-size: 0.8rem;
+            }
+            
+            td {
+                padding: 10px 8px;
+                font-size: 0.9rem;
+            }
+            
+            .player-name {
+                font-size: 0.85rem;
+            }
+            
+            .top-killers {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.7rem;
+            }
+            
+            .info-card {
+                min-width: calc(50% - 10px);
+            }
+            
+            table {
+                min-width: 300px;
+            }
+            
+            th {
+                padding: 10px 8px;
+                font-size: 0.75rem;
+            }
+            
+            td {
+                padding: 8px 6px;
+                font-size: 0.85rem;
+            }
+            
+            .team-name {
+                font-size: 0.95rem;
+            }
+            
+            .player-name {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-crosshairs"></i> PUBG Mobile Tournament</h1>
+            <p>Created by Fury Master & The Dodger</p>
+            
+            <div class="tournament-info">
+                <div class="info-card">
+                    <h3>Total Teams</h3>
+                    <p>16</p>
+                </div>
+                <div class="info-card">
+                    <h3>Total Matches</h3>
+                    <p>5</p>
+                </div>
+                <div class="info-card">
+                    <h3>Players Per Team</h3>
+                    <p>2</p>
+                </div>
+                <div class="info-card">
+                    <h3>Prize Pool</h3>
+                    <p>3500 PKR</p>
+                </div>
+            </div>
+        </header>
+        
+        <div class="tabs">
+            <button class="tab-btn active" onclick="switchTab('team-standings')">Team Standings</button>
+            <button class="tab-btn" onclick="switchTab('top-killers')">Top Killers</button>
+        </div>
+        
+        <div class="tab-content active" id="team-standings">
+            <h2 class="section-title">Team Standings - After Match 5</h2>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Team</th>
+                            <th>Players</th>
+                            <th>Place Points</th>
+                            <th>Kill Points</th>
+                            <th>Total Points</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="gold-row">
+                            <td class="team-rank">1</td>
+                            <td class="team-name">Alpha Warriors</td>
+                            <td>
+                                <span class="player-name">ShadowHunter</span>
+                                <span class="player-name">PhantomShot</span>
+                            </td>
+                            <td class="points place-points">60</td>
+                            <td class="points kill-points">68</td>
+                            <td class="points total-points">128</td>
+                        </tr>
+                        <tr class="silver-row">
+                            <td class="team-rank">2</td>
+                            <td class="team-name">Victory X</td>
+                            <td>
+                                <span class="player-name">DeathDealer</span>
+                                <span class="player-name">SniperWolf</span>
+                            </td>
+                            <td class="points place-points">58</td>
+                            <td class="points kill-points">63</td>
+                            <td class="points total-points">121</td>
+                        </tr>
+                        <tr class="bronze-row">
+                            <td class="team-rank">3</td>
+                            <td class="team-name">Storm Riders</td>
+                            <td>
+                                <span class="player-name">ThunderStrike</span>
+                                <span class="player-name">NightFury</span>
+                            </td>
+                            <td class="points place-points">56</td>
+                            <td class="points kill-points">59</td>
+                            <td class="points total-points">115</td>
+                        </tr>
+                        <tr>
+                            <td class="team-rank">4</td>
+                            <td class="team-name">Ghost Reapers</td>
+                            <td>
+                                <span class="player-name">SilentAssassin</span>
+                                <span class="player-name">DarkKnight</span>
+                            </td>
+                            <td class="points place-points">52</td>
+                            <td class="points kill-points">56</td>
+                            <td class="points total-points">108</td>
+                        </tr>
+                        <tr>
+                            <td class="team-rank">5</td>
+                            <td class="team-name">Phoenix Force</td>
+                            <td>
+                                <span class="player-name">FireBird</span>
+                                <span class="player-name">AshBringer</span>
+                            </td>
+                            <td class="points place-points">48</td>
+                            <td class="points kill-points">54</td>
+                            <td class="points total-points">102</td>
+                        </tr>
+                        <tr>
+                            <td class="team-rank">6</td>
+                            <td class="team-name">Dragon Blades</td>
+                            <td>
+                                <span class="player-name">BladeMaster</span>
+                                <span class="player-name">DragonFire</span>
+                            </td>
+                            <td class="points place-points">47</td>
+                            <td class="points kill-points">51</td>
+                            <td class="points total-points">98</td>
+                        </tr>
+                        <tr>
+                            <td class="team-rank">7</td>
+                            <td class="team-name">Iron Legion</td>
+                            <td>
+                                <span class="player-name">IronMan</span>
+                                <span class="player-name">WarMachine</span>
+                            </td>
+                            <td class="points place-points">44</td>
+                            <td class="points kill-points">50</td>
+                            <td class="points total-points">94</td>
+                        </tr>
+                        <tr>
+                            <td class="team-rank">8</td>
+                            <td class="team-name">Frost Giants</td>
+                            <td>
+                                <span class="player-name">IceQueen</span>
+                                <span class="player-name">FrostBite</span>
+                            </td>
+                            <td class="points place-points">42</td>
+                            <td class="points kill-points">48</td>
+                            <td class="points total-points">90</td>
+                        </tr>
+                        <tr>
+                            <td class="team-rank">9</td>
+                            <td class="team-name">Desert Hawks</td>
+                            <td>
+                                <span class="player-name">SandStorm</span>
+                                <span class="player-name">Mirage</span>
+                            </td>
+                            <td class="points place-points">42</td>
+                            <td class="points kill-points">44</td>
+                            <td class="points total-points">86</td>
+                        </tr>
+                        <tr>
+                            <td class="team-rank">10</td>
+                            <td class="team-name">Cyber Ninjas</td>
+                            <td>
+                                <span class="player-name">Neo</span>
+                                <span class="player-name">Trinity</span>
+                            </td>
+                            <td class="points place-points">41</td>
+                            <td class="points kill-points">42</td>
+                            <td class="points total-points">83</td>
+                        </tr>
+                        <tr>
+                            <td class="team-rank">11</td>
+                            <td class="team-name">Titan Squad</td>
+                            <td>
+                                <span class="player-name">Atlas</span>
+                                <span class="player-name">Kronos</span>
+                            </td>
+                            <td class="points place-points">37</td>
+                            <td class="points kill-points">41</td>
+                            <td class="points total-points">78</td>
+                        </tr>
+                        <tr>
+                            <td class="team-rank">12</td>
+                            <td class="team-name">Night Wolves</td>
+                            <td>
+                                <span class="player-name">MoonWalker</span>
+                                <span class="player-name">LoneWolf</span>
+                            </td>
+                            <td class="points place-points">36</td>
+                            <td class="points kill-points">38</td>
+                            <td class="points total-points">74</td>
+                        </tr>
+                        <tr>
+                            <td class="team-rank">13</td>
+                            <td class="team-name">Sky Guardians</td>
+                            <td>
+                                <span class="player-name">SkyLord</span>
+                                <span class="player-name">WindRider</span>
+                            </td>
+                            <td class="points place-points">34</td>
+                            <td class="points kill-points">36</td>
+                            <td class="points total-points">70</td>
+                        </tr>
+                        <tr>
+                            <td class="team-rank">14</td>
+                            <td class="team-name">Ocean Kings</td>
+                            <td>
+                                <span class="player-name">Poseidon</span>
+                                <span class="player-name">Neptune</span>
+                            </td>
+                            <td class="points place-points">31</td>
+                            <td class="points kill-points">34</td>
+                            <td class="points total-points">65</td>
+                        </tr>
+                        <tr>
+                            <td class="team-rank">15</td>
+                            <td class="team-name">Forest Rangers</td>
+                            <td>
+                                <span class="player-name">GreenArrow</span>
+                                <span class="player-name">WildCat</span>
+                            </td>
+                            <td class="points place-points">28</td>
+                            <td class="points kill-points">32</td>
+                            <td class="points total-points">60</td>
+                        </tr>
+                        <tr>
+                            <td class="team-rank">16</td>
+                            <td class="team-name">Mountain Kings</td>
+                            <td>
+                                <span class="player-name">Rocky</span>
+                                <span class="player-name">Summit</span>
+                            </td>
+                            <td class="points place-points">27</td>
+                            <td class="points kill-points">28</td>
+                            <td class="points total-points">55</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="top-killers">
+            <h2 class="section-title">Top Killers</h2>
+            
+            <div class="top-killers">
+                <div class="killer-card gold-killer">
+                    <div class="killer-rank">1</div>
+                    <div class="killer-info">
+                        <div class="killer-name">ShadowHunter</div>
+                        <div class="killer-team">Alpha Warriors</div>
+                    </div>
+                    <div class="killer-stats">
+                        <div class="kills-count">42</div>
+                        <div class="kills-label">Kills</div>
+                    </div>
+                </div>
+                
+                <div class="killer-card silver-killer">
+                    <div class="killer-rank">2</div>
+                    <div class="killer-info">
+                        <div class="killer-name">DeathDealer</div>
+                        <div class="killer-team">Victory X</div>
+                    </div>
+                    <div class="killer-stats">
+                        <div class="kills-count">38</div>
+                        <div class="kills-label">Kills</div>
+                    </div>
+                </div>
+                
+                <div class="killer-card bronze-killer">
+                    <div class="killer-rank">3</div>
+                    <div class="killer-info">
+                        <div class="killer-name">ThunderStrike</div>
+                        <div class="killer-team">Storm Riders</div>
+                    </div>
+                    <div class="killer-stats">
+                        <div class="kills-count">35</div>
+                        <div class="kills-label">Kills</div>
+                    </div>
+                </div>
+                
+                <div class="killer-card">
+                    <div class="killer-rank">4</div>
+                    <div class="killer-info">
+                        <div class="killer-name">SilentAssassin</div>
+                        <div class="killer-team">Ghost Reapers</div>
+                    </div>
+                    <div class="killer-stats">
+                        <div class="kills-count">33</div>
+                        <div class="kills-label">Kills</div>
+                    </div>
+                </div>
+                
+                <div class="killer-card">
+                    <div class="killer-rank">5</div>
+                    <div class="killer-info">
+                        <div class="killer-name">FireBird</div>
+                        <div class="killer-team">Phoenix Force</div>
+                    </div>
+                    <div class="killer-stats">
+                        <div class="kills-count">31</div>
+                        <div class="kills-label">Kills</div>
+                    </div>
+                </div>
+                
+                <div class="killer-card">
+                    <div class="killer-rank">6</div>
+                    <div class="killer-info">
+                        <div class="killer-name">BladeMaster</div>
+                        <div class="killer-team">Dragon Blades</div>
+                    </div>
+                    <div class="killer-stats">
+                        <div class="kills-count">30</div>
+                        <div class="kills-label">Kills</div>
+                    </div>
+                </div>
+                
+                <div class="killer-card">
+                    <div class="killer-rank">7</div>
+                    <div class="killer-info">
+                        <div class="killer-name">PhantomShot</div>
+                        <div class="killer-team">Alpha Warriors</div>
+                    </div>
+                    <div class="killer-stats">
+                        <div class="kills-count">29</div>
+                        <div class="kills-label">Kills</div>
+                    </div>
+                </div>
+                
+                <div class="killer-card">
+                    <div class="killer-rank">8</div>
+                    <div class="killer-info">
+                        <div class="killer-name">SniperWolf</div>
+                        <div class="killer-team">Victory X</div>
+                    </div>
+                    <div class="killer-stats">
+                        <div class="kills-count">28</div>
+                        <div class="kills-label">Kills</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>PUBG Mobile Tournament Leaderboard | Created by Fury Master & The Dodger | © 2023 All Rights Reserved</p>
+        </div>
+    </div>
+    
+    <script>
+        function switchTab(tabId) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show the selected tab content
+            document.getElementById(tabId).classList.add('active');
+            
+            // Add active class to clicked button
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>
