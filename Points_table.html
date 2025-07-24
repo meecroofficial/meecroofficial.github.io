@@ -22,140 +22,6 @@
             overflow-x: hidden;
         }
         
-        /* Copyright Notice Popup */
-        .copyright-popup {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            backdrop-filter: blur(10px);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            opacity: 1;
-            transition: opacity 0.5s ease;
-        }
-        
-        .copyright-popup.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-        
-        .copyright-container {
-            background: linear-gradient(145deg, #0d1b29, #152232);
-            border: 2px solid rgba(0, 195, 255, 0.4);
-            border-radius: 20px;
-            width: 90%;
-            max-width: 500px;
-            padding: 30px;
-            box-shadow: 0 0 40px rgba(255, 204, 0, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .copyright-container::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(to right, #ffcc00, #00c3ff);
-        }
-        
-        .copyright-header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        
-        .copyright-header i {
-            font-size: 3.5rem;
-            color: #ffcc00;
-            margin-bottom: 15px;
-            text-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
-        }
-        
-        .copyright-header h1 {
-            font-size: 2.3rem;
-            background: linear-gradient(to right, #ffcc00, #ff9900);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
-        }
-        
-        .copyright-content {
-            padding: 15px;
-            background: rgba(0, 30, 60, 0.6);
-            border-radius: 10px;
-            margin-bottom: 20px;
-            border: 1px solid rgba(0, 195, 255, 0.2);
-            text-align: center;
-        }
-        
-        .copyright-content p {
-            margin-bottom: 15px;
-            line-height: 1.6;
-            font-size: 1.05rem;
-        }
-        
-        .copyright-content strong {
-            color: #ffcc00;
-            display: block;
-            margin: 10px 0;
-            font-size: 1.2rem;
-        }
-        
-        .copyright-warning {
-            background: rgba(180, 0, 0, 0.2);
-            border-radius: 5px;
-            padding: 10px;
-            margin: 15px 0;
-            border: 1px solid rgba(255, 0, 0, 0.3);
-            font-size: 0.95rem;
-        }
-        
-        .copyright-buttons {
-            display: flex;
-            justify-content: center;
-        }
-        
-        .copyright-btn {
-            padding: 12px 40px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            background: linear-gradient(to right, #00c3ff, #0077ff);
-            color: white;
-            box-shadow: 0 0 15px rgba(0, 195, 255, 0.4);
-        }
-        
-        .copyright-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 0 20px rgba(0, 195, 255, 0.6);
-        }
-        
-        /* Main Content */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-            opacity: 1;
-            transition: opacity 0.3s ease;
-        }
-        
-        .container.blurred {
-            opacity: 0.3;
-            filter: blur(5px);
-            pointer-events: none;
-        }
-        
         .pubg-overlay {
             position: fixed;
             top: 0;
@@ -167,6 +33,13 @@
                 radial-gradient(circle at 90% 80%, rgba(0, 195, 255, 0.05) 0%, transparent 20%);
             z-index: 1;
             pointer-events: none;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
         
         /* Header Section */
@@ -774,21 +647,8 @@
         
         /* Mobile specific adjustments */
         @media (max-width: 768px) {
-            .copyright-container {
-                padding: 25px;
-            }
-            
-            .copyright-header h1 {
-                font-size: 2rem;
-            }
-            
-            .copyright-content p {
-                font-size: 1rem;
-            }
-            
-            .copyright-btn {
-                padding: 12px 30px;
-                font-size: 1rem;
+            header {
+                padding: 20px 0 15px;
             }
             
             header h1 {
@@ -853,21 +713,21 @@
             .points-card {
                 padding: 15px;
             }
+            
+            .prize-card {
+                padding: 15px;
+            }
+            
+            .points-header, .prize-rank {
+                font-size: 1.6rem;
+            }
+            
+            .prize-amount {
+                font-size: 1.6rem;
+            }
         }
         
         @media (max-width: 480px) {
-            .copyright-container {
-                padding: 20px;
-            }
-            
-            .copyright-header h1 {
-                font-size: 1.7rem;
-            }
-            
-            .copyright-content {
-                font-size: 0.95rem;
-            }
-            
             body {
                 padding: 15px;
             }
@@ -906,8 +766,6 @@
     </style>
 </head>
 <body>
-  
-           
     <div class="pubg-overlay"></div>
     
     <div class="container" id="mainContainer">
@@ -1012,6 +870,39 @@
                             <td class="points kill-points">11</td>
                             <td class="points total-points">18</td>
                         </tr>
+                        <tr>
+                            <td class="team-rank">6</td>
+                            <td class="team-name">Ghost Reapers</td>
+                            <td>
+                                <span class="player-name">SoulTaker</span>
+                                <span class="player-name">SilentDeath</span>
+                            </td>
+                            <td class="points place-points">6</td>
+                            <td class="points kill-points">10</td>
+                            <td class="points total-points">16</td>
+                        </tr>
+                        <tr>
+                            <td class="team-rank">7</td>
+                            <td class="team-name">Arctic Wolves</td>
+                            <td>
+                                <span class="player-name">FrostBite</span>
+                                <span class="player-name">IceBreaker</span>
+                            </td>
+                            <td class="points place-points">4</td>
+                            <td class="points kill-points">9</td>
+                            <td class="points total-points">13</td>
+                        </tr>
+                        <tr>
+                            <td class="team-rank">8</td>
+                            <td class="team-name">Titan Hunters</td>
+                            <td>
+                                <span class="player-name">GiantSlayer</span>
+                                <span class="player-name">Colossus</span>
+                            </td>
+                            <td class="points place-points">3</td>
+                            <td class="points kill-points">8</td>
+                            <td class="points total-points">11</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -1053,6 +944,18 @@
                     </div>
                     <div class="killer-stats">
                         <div class="kills-count">8</div>
+                        <div class="kills-label">Kills</div>
+                    </div>
+                </div>
+                
+                <div class="killer-card">
+                    <div class="killer-rank">4</div>
+                    <div class="killer-info">
+                        <div class="killer-name">FireBird</div>
+                        <div class="killer-team">Phoenix Force</div>
+                    </div>
+                    <div class="killer-stats">
+                        <div class="kills-count">7</div>
                         <div class="kills-label">Kills</div>
                     </div>
                 </div>
@@ -1104,7 +1007,7 @@
                 <ul class="rules-list">
                     <li>All players must use their registered PUBG Mobile accounts</li>
                     <li><span class="rule-highlight">No emulator players</span> allowed - mobile devices only</li>
-                    <li>Matches will be played in <span class="rule-highlight">TPP Squad</span> mode on <span class="rule-highlight">Erangel</span></li>
+                    <li>Matches will be played in <span class="rule-highlight">TPP DUA</span> mode on <span class="rule-highlight">Erangel</span></li>
                     <li>Any form of cheating results in <span class="rule-highlight">immediate disqualification</span></li>
                     <li>Teaming with enemy squads is <span class="rule-highlight">strictly prohibited</span></li>
                     <li>Join match lobby within <span class="rule-highlight">10 minutes</span> of scheduled time</li>
@@ -1207,8 +1110,8 @@
             </div>
         </div>
     </div>
-
-        
+    
+    <script>
         // Tab switching function
         function switchTab(tabId) {
             // Hide all tab contents
