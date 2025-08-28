@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horror Game Credits</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Creepster&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --header-color: #FF6B6B;
+            --subheader-color: #4ECDC4;
+            --name-highlight: #FFE66D;
+            --body-text: #95E1D3;
+            --bullet-color: #F38BA8;
+            --link-color: #A8DADC;
+            --warning-color: #FFE66D;
+            --card-bg: rgba(20, 20, 30, 0.8);
+            --card-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a1a 50%, #0a0a0a 100%);
+            background-attachment: fixed;
+            color: var(--body-text);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Animated background particles */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, rgba(255, 107, 107, 0.3), transparent),
+                radial-gradient(2px 2px at 40px 70px, rgba(78, 205, 196, 0.2), transparent),
+                radial-gradient(1px 1px at 90px 40px, rgba(255, 230, 109, 0.3), transparent),
+                radial-gradient(1px 1px at 130px 80px, rgba(149, 225, 211, 0.2), transparent);
+            background-repeat: repeat;
+            background-size: 150px 150px;
+            animation: sparkle 20s linear infinite;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
+            50% { transform: translateY(-20px) rotate(180deg); opacity: 0.6; }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Page Header */
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .page-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: var(--header-color);
+            text-shadow: 0 0 30px var(--header-color), 0 0 60px var(--header-color);
+            margin-bottom: 1rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+        }
+
+        .page-subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            color: var(--subheader-color);
+            text-shadow: 0 0 15px var(--subheader-color);
+            opacity: 0.9;
+        }
+
+        /* Navigation */
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            padding: 1.5rem;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-button {
+            background: rgba(255, 107, 107, 0.1);
+            border: 2px solid var(--header-color);
+            color: var(--header-color);
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.95rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 10px var(--header-color);
+        }
+
+        .nav-button:hover, .nav-button.active {
+            background: rgba(255, 107, 107, 0.3);
+            text-shadow: 0 0 20px var(--header-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+        }
+
+        /* Content Sections */
+        .section {
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .section:nth-child(even) {
+            animation-delay: 0.2s;
+        }
+
+        .section:nth-child(odd) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section.hidden {
+            display: none;
+        }
+
+        /* Typography */
+        .header {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            color: var(--header-color);
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 20px var(--header-color);
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+
+        .subheader {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+            color: var(--subheader-color);
+            margin: 1.5rem 0 1rem 0;
+            text-shadow: 0 0 15px var(--subheader-color);
+            font-weight: 400;
+        }
+
+        .name-highlight {
+            font-size: clamp(1.4rem, 3.5vw, 2rem);
+            color: var(--name-highlight);
+            font-weight: bold;
+            text-shadow: 0 0 20px var(--name-highlight);
+            margin: 1rem 0;
+            font-family: 'Cinzel', serif;
+            text-align: center;
+        }
+
+        .body-text {
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+            color: var(--body-text);
+            margin: 0.8rem 0;
+            text-shadow: 0 0 8px rgba(149, 225, 211, 0.3);
+        }
+
+        .bullet-list {
+            list-style: none;
+            margin: 1rem 0;
+            padding: 0 1rem;
+        }
+
+        .bullet-list li {
+            color: var(--bullet-color);
+            font-size: clamp(0.95rem, 2.3vw, 1.05rem);
+            margin: 0.8rem 0;
+            text-shadow: 0 0 8px rgba(243, 139, 168, 0.3);
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .bullet-list li::before {
+            content: "🗝️";
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* Asset Credits Grid */
+        .assets-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .asset-card {
+            background: rgba(30, 30, 40, 0.6);
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .asset-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            border-color: var(--link-color);
+        }
+
+        .asset-name {
+            font-weight: bold;
+            color: var(--name-highlight);
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            text-shadow: 0 0 10px var(--name-highlight);
+        }
+
+        .asset-link {
+            color: var(--link-color);
+            text-decoration: none;
+            text-shadow: 0 0 8px rgba(168, 218, 220, 0.3);
+            transition: all 0.3s ease;
+            word-break: break-all;
+            display: inline-block;
+            margin: 0.3rem 0;
+        }
+
+        .asset-link:hover {
+            text-decoration: underline;
+            text-shadow: 0 0 15px var(--link-color);
+            color: #ffffff;
+        }
+
+        .asset-author {
+            color: var(--bullet-color);
+            font-style: italic;
+            margin-top: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .license-info {
+            background: rgba(78, 205, 196, 0.1);
+            color: var(--subheader-color);
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+            display: inline-block;
+        }
+
+        .license-warning {
+            background: rgba(255, 230, 109, 0.2);
+            border: 1px solid var(--warning-color);
+            color: var(--warning-color);
+            padding: 0.5rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            text-shadow: 0 0 8px var(--warning-color);
+        }
+
+        .main-warning {
+            background: rgba(255, 230, 109, 0.1);
+            border: 2px solid var(--warning-color);
+            color: var(--warning-color);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            font-size: 1rem;
+            text-shadow: 0 0 10px var(--warning-color);
+            text-align: center;
+        }
+
+        /* Audio Credits */
+        .audio-item {
+            background: rgba(243, 139, 168, 0.05);
+            border-left: 4px solid var(--bullet-color);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .footer-title {
+            font-family: 'Creepster', cursive;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            color: var(--header-color);
+            text-shadow: 0 0 30px var(--header-color);
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem 0.5rem;
+            }
+            
+            .nav-menu {
+                padding: 1rem;
+            }
+            
+            .nav-button {
+                padding: 0.6rem 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .section {
+                padding: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .assets-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                color: black;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .section {
+                background: white;
+                border: 1px solid #ccc;
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <header class="page-header">
+            <h1 class="page-title">HORROR GAME</h1>
+            <p class="page-subtitle">Development Credits & Acknowledgments</p>
+        </header>
+
+        <nav class="nav-menu">
+            <a href="#" class="nav-button active" onclick="showSection('all')">All Credits</a>
+            <a href="#" class="nav-button" onclick="showSection('development')">Development</a>
+            <a href="#" class="nav-button" onclick="showSection('assets')">3D Assets</a>
+            <a href="#" class="nav-button" onclick="showSection('audio')">Audio</a>
+            <a href="#" class="nav-button" onclick="showSection('legal')">Legal Info</a>
+        </nav>
+
+        <div class="main-warning section" data-category="legal">
+            <strong>⚠️ LICENSING NOTICE</strong><br>
+            'Antique Book Small' is licensed CC BY-NC 4.0 (Non-Commercial). This game contains ads (commercial use). Verify permission or replace this asset before commercial distribution.
+        </div>
+
+        <section class="section" data-category="development">
+            <h1 class="header">DEVELOPMENT TEAM</h1>
+            
+            <h2 class="subheader">Primary Developer</h2>
+            <div class="name-highlight">HASSAN ALI</div>
+
+            <div class="body-text"><strong>HASSAN ALI</strong> handled all aspects of development including:</div>
+            <ul class="bullet-list">
+                <li>Game Programming & Scripting</li>
+                <li>Character Animation Systems</li>
+                <li>Visual Effects</li>
+                <li>Sound Design</li>
+                <li>Gameplay Mechanics</li>
+                <li>UI/UX Systems</li>
+            </ul>
+
+            <h2 class="subheader">Story & Narrative</h2>
+            <div class="body-text">Original concept and story developed by <strong>HASSAN ALI</strong></div>
+
+            <h2 class="subheader">Production</h2>
+            <div class="body-text">Entirely developed by <strong>HASSAN ALI</strong> as an independent production</div>
+        </section>
+
+        <section class="section" data-category="assets">
+            <h1 class="header">3D ASSETS & MODELS</h1>
+            <p class="body-text">The following 3D models were sourced from Sketchfab and used under Creative Commons licenses:</p>
+            
+            <div class="assets-grid">
+                <div class="asset-card">
+                    <div class="asset-name">'granny's house (1.8)'</div>
+                    <a href="https://skfb.ly/oGnoD" target="_blank" rel="noopener noreferrer" class="asset-link">https://skfb.ly/oGnoD</a>
+                    <div class="asset-author">by amogusstrikesback2</div>
+                    <div class="license-info">CC Attribution 4.0</div>
+                </div>
+
+                <div class="asset-card">
+                    <div class="asset-name">'Stylized key'</div>
+                    <a href="https://skfb.ly/onO9Q" target="_blank" rel="noopener noreferrer" class="asset-link">https://skfb.ly/onO9Q</a>
+                    <div class="asset-author">by kajindd</div>
+                    <div class="license-info">CC Attribution 4.0</div>
+                </div>
+
+                <div class="asset-card">
+                    <div class="asset-name">'KEY'</div>
+                    <a href="https://skfb.ly/6VP6E" target="_blank" rel="noopener noreferrer" class="asset-link">https://skfb.ly/6VP6E</a>
+                    <div class="asset-author">by spooneystone</div>
+                    <div class="license-info">CC Attribution 4.0</div>
+                </div>
+
+                <div class="asset-card">
+                    <div class="asset-name">'Blue Metal Door'</div>
+                    <a href="https://skfb.ly/pyXHH" target="_blank" rel="noopener noreferrer" class="asset-link">https://skfb.ly/pyXHH</a>
+                    <div class="asset-author">by AspectStudios</div>
+                    <div class="license-info">CC Attribution 4.0</div>
+                </div>
+
+                <div class="asset-card">
+                    <div class="asset-name">'Key with Tag'</div>
+                    <a href="https://skfb.ly/oAqSG" target="_blank" rel="noopener noreferrer" class="asset-link">https://skfb.ly/oAqSG</a>
+                    <div class="asset-author">by AxonDesigns</div>
+                    <div class="license-info">CC Attribution 4.0</div>
+                </div>
+
+                <div class="asset-card">
+                    <div class="asset-name">'Door'</div>
+                    <a href="https://skfb.ly/6qG7R" target="_blank" rel="noopener noreferrer" class="asset-link">https://skfb.ly/6qG7R</a>
+                    <div class="asset-author">by Nikolayy</div>
+                    <div class="license-info">CC Attribution 4.0</div>
+                </div>
+
+                <div class="asset-card">
+                    <div class="asset-name">'the Golden Key'</div>
+                    <a href="https://skfb.ly/69n7N" target="_blank" rel="noopener noreferrer" class="asset-link">https://skfb.ly/69n7N</a>
+                    <div class="asset-author">by 3DisFUNny</div>
+                    <div class="license-info">CC Attribution 4.0</div>
+                </div>
+
+                <div class="asset-card">
+                    <div class="asset-name">'Rust key'</div>
+                    <a href="https://skfb.ly/S8AB" target="_blank" rel="noopener noreferrer" class="asset-link">https://skfb.ly/S8AB</a>
+                    <div class="asset-author">by KloWorks</div>
+                    <div class="license-info">CC Attribution 4.0</div>
+                </div>
+
+                <div class="asset-card">
+                    <div class="asset-name">'Springtrap Jumpscare'</div>
+                    <a href="https://skfb.ly/6ZU6Y" target="_blank" rel="noopener noreferrer" class="asset-link">https://skfb.ly/6ZU6Y</a>
+                    <div class="asset-author">by OrangeSauceu</div>
+                    <div class="license-info">CC Attribution 4.0</div>
+                </div>
+
+                <div class="asset-card">
+                    <div class="asset-name">'scary doll'</div>
+                    <a href="https://skfb.ly/oOzNB" target="_blank" rel="noopener noreferrer" class="asset-link">https://skfb.ly/oOzNB</a>
+                    <div class="asset-author">by vicente betoret ferrero</div>
+                    <div class="license-info">CC Attribution 4.0</div>
+                </div>
+
+                <div class="asset-card">
+                    <div class="asset-name">'Hard Cover Books'</div>
+                    <a href="https://skfb.ly/6QVyK" target="_blank" rel="noopener noreferrer" class="asset-link">https://skfb.ly/6QVyK</a>
+                    <div class="asset-author">by GetDeadEntertainment</div>
+                    <div class="license-info">CC Attribution 4.0</div>
+                </div>
+
+                <div class="asset-card">
+                    <div class="asset-name">'Shabby books'</div>
+                    <a href="https://skfb.ly/6WELq" target="_blank" rel="noopener noreferrer" class="asset-link">https://skfb.ly/6WELq</a>
+                    <div class="asset-author">by KIFIR</div>
+                    <div class="license-info">CC Attribution 4.0</div>
+                </div>
+
+                <div class="asset-card">
+                    <div class="asset-name">'Magic book set'</div>
+                    <a href="https://skfb.ly/pyo98" target="_blank" rel="noopener noreferrer" class="asset-link">https://skfb.ly/pyo98</a>
+                    <div class="asset-author">by evildeer</div>
+                    <div class="license-info">CC Attribution 4.0</div>
+                </div>
+
+                <div class="asset-card">
+                    <div class="asset-name">'12 Old Books'</div>
+                    <a href="https://skfb.ly/orHnt" target="_blank" rel="noopener noreferrer" class="asset-link">https://skfb.ly/orHnt</a>
+                    <div class="asset-author">by Pedro Belthori</div>
+                    <div class="license-info">CC Attribution 4.0</div>
+                </div>
+
+                <div class="asset-card">
+                    <div class="asset-name">'Antique Book Small'</div>
+                    <a href="https://skfb.ly/6WN7D" target="_blank" rel="noopener noreferrer" class="asset-link">https://skfb.ly/6WN7D</a>
+                    <div class="asset-author">by Erika Dejnes [YuYuna Art]</div>
+                    <div class="license-info">CC BY-NC 4.0</div>
+                    <div class="license-warning">
+                        ⚠️ Non-Commercial License: This asset requires permission for commercial use. Game contains ads which may constitute commercial use.
+                    </div>
+                </div>
+
+                <div class="asset-card">
+                    <div class="asset-name">'Ancient Book'</div>
+                    <a href="https://skfb.ly/p9NGR" target="_blank" rel="noopener noreferrer" class="asset-link">https://skfb.ly/p9NGR</a>
+                    <div class="asset-author">by Amir Hamza</div>
+                    <div class="license-info">CC Attribution 4.0</div>
+                </div>
+
+                <div class="asset-card">
+                    <div class="asset-name">'Vintage Book A401'</div>
+                    <a href="https://skfb.ly/6Vys7" target="_blank" rel="noopener noreferrer" class="asset-link">https://skfb.ly/6Vys7</a>
+                    <div class="asset-author">by Chellew</div>
+                    <div class="license-info">CC Attribution 4.0</div>
+                </div>
+
+                <div class="asset-card">
+                    <div class="asset-name">'doll'</div>
+                    <a href="https://skfb.ly/ot8HS" target="_blank" rel="noopener noreferrer" class="asset-link">https://skfb.ly/ot8HS</a>
+                    <div class="asset-author">by lucq22</div>
+                    <div class="license-info">CC Attribution 4.0</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" data-category="audio">
+            <h1 class="header">AUDIO CREDITS</h1>
+            
+            <div class="audio-item">
+                <strong>🎵 Happy Birthday Song</strong><br>
+                <div class="body-text">by YouTube @LARASHORRORSOUNDS</div>
+            </div>
+
+            <div class="audio-item">
+                <strong>🎮 Game Background Music</strong><br>
+                <div class="body-text">Power Music Factory</div>
+            </div>
+
+            <div class="audio-item">
+                <strong>🎼 Credits Scene Music</strong><br>
+                <div class="body-text">ETHNIC ANGELIC Ambient Ancient Chan by (YouTube) @tihanamusic</div>
+            </div>
+
+            <div class="audio-item">
+                <strong>🔊 Sound Effects</strong><br>
+                <div class="body-text">Most sound effects sourced from Pixabay</div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <h1 class="footer-title">THANK YOU FOR PLAYING!</h1>
+            <div class="body-text">We hope you enjoyed this terrifying experience!</div>
+            <div class="body-text" style="margin-top: 1rem; opacity: 0.7;">
+                Developed with ❤️ by Hassan Ali | Independent Horror Game Development
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        function showSection(category) {
+            const sections = document.querySelectorAll('.section');
+            const buttons = document.querySelectorAll('.nav-button');
+            
+            // Remove active class from all buttons
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+            
+            if (category === 'all') {
+                // Show all sections
+                sections.forEach(section => {
+                    section.classList.remove('hidden');
+                });
+            } else {
+                // Hide all sections first
+                sections.forEach(section => {
+                    if (section.dataset.category === category) {
+                        section.classList.remove('hidden');
+                    } else {
+                        section.classList.add('hidden');
+                    }
+                });
+            }
+        }
+
+        // Add smooth scrolling for better UX
+        document.querySelectorAll('.nav-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Smooth scroll to top of content
+                setTimeout(() => {
+                    window.scrollTo({
+                        top: document.querySelector('.nav-menu').offsetTop - 20,
+                        behavior: 'smooth'
+                    });
+                }, 100);
+            });
+        });
+
+        // Add keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key >= '1' && e.key <= '5') {
+                const buttons = document.querySelectorAll('.nav-button');
+                const index = parseInt(e.key) - 1;
+                if (buttons[index]) {
+                    buttons[index].click();
+                }
+            }
+        });
+
+        // Initialize with staggered animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.asset-card');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+    </script>
+</body>
+</html>
