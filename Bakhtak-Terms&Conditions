@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions - Bakhtak Horror Game</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Josefin+Sans:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --dark-bg: #0c0c14;
+            --darker-bg: #070710;
+            --text: #e8e8e8;
+            --accent: #3a005c;
+            --accent-secondary: #8e44ad;
+            --accent-glow: #8e44ad4d;
+            --section-bg: #141422;
+            --border: #34344a;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text);
+            font-family: 'Josefin Sans', sans-serif;
+            line-height: 1.7;
+            padding: 0;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(100, 0, 150, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(100, 0, 150, 0.05) 0%, transparent 20%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            position: relative;
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .title {
+            font-family: 'MedievalSharp', cursive;
+            font-size: 3.2rem;
+            color: #fff;
+            text-shadow: 0 0 10px var(--accent-glow), 2px 2px 3px rgba(0,0,0,0.7);
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            animation: flicker 8s infinite alternate;
+        }
+        
+        .subtitle {
+            font-size: 1.4rem;
+            color: #b8b8b8;
+            margin-bottom: 25px;
+        }
+        
+        .warning-banner {
+            background: linear-gradient(135deg, #4a006e, #3a005c);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 35px;
+            text-align: center;
+            border: 1px solid #8e44ad33;
+            box-shadow: 0 0 15px rgba(142, 68, 173, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .warning-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+            transform: rotate(30deg);
+        }
+        
+        .age-warning {
+            font-weight: bold;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: #d6a2e8;
+            text-shadow: 0 0 5px rgba(142, 68, 173, 0.5);
+            position: relative;
+        }
+        
+        .section {
+            background-color: var(--section-bg);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+        
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--accent-secondary), var(--accent));
+        }
+        
+        h2 {
+            color: #d0d0e0;
+            margin: 0 0 20px 0;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+            font-family: 'MedievalSharp', cursive;
+            font-size: 1.8rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--accent-secondary);
+            border-radius: 3px;
+        }
+        
+        p {
+            margin-bottom: 18px;
+            font-size: 1.05rem;
+        }
+        
+        strong {
+            color: #e0e0e0;
+            font-weight: 600;
+        }
+        
+        a {
+            color: #9b59b6;
+            text-decoration: none;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+        
+        a:hover {
+            color: #d6a2e8;
+            text-shadow: 0 0 5px rgba(142, 68, 173, 0.4);
+        }
+        
+        .last-updated {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #8888a0;
+            font-style: italic;
+            border-top: 1px solid var(--border);
+        }
+        
+        .update-note {
+            background-color: rgba(142, 68, 173, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border-left: 3px solid var(--accent-secondary);
+        }
+        
+        .contact-info {
+            background-color: var(--section-bg);
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 30px;
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+        
+        .graphic-element {
+            position: absolute;
+            opacity: 0.07;
+            pointer-events: none;
+            z-index: 0;
+            font-size: 100px;
+        }
+        
+        .candle-1 {
+            top: 15%;
+            right: 10%;
+            transform: rotate(15deg);
+        }
+        
+        .candle-2 {
+            bottom: 20%;
+            left: 8%;
+            transform: rotate(-20deg);
+        }
+        
+        .spider-1 {
+            top: 40%;
+            right: 5%;
+            font-size: 80px;
+            transform: rotate(45deg);
+        }
+        
+        .spider-2 {
+            bottom: 30%;
+            left: 5%;
+            font-size: 80px;
+            transform: rotate(-45deg);
+        }
+        
+        ol {
+            padding-left: 24px;
+            margin-bottom: 18px;
+        }
+        
+        li {
+            margin-bottom: 12px;
+        }
+        
+        .clause {
+            margin-bottom: 25px;
+        }
+        
+        .clause-title {
+            font-weight: 600;
+            color: #d0d0e0;
+            margin-bottom: 8px;
+            display: block;
+        }
+        
+        .credits {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .acceptance-box {
+            background: linear-gradient(135deg, #141422, #1c1c32);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid var(--accent-secondary);
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .credit-section {
+            background-color: rgba(142, 68, 173, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 3px solid var(--accent-secondary);
+        }
+        
+        @keyframes flicker {
+            0%, 100% { opacity: 1; text-shadow: 0 0 10px var(--accent-glow), 2px 2px 3px rgba(0,0,0,0.7); }
+            25% { opacity: 0.95; text-shadow: 0 0 12px var(--accent-glow), 2px 2px 5px rgba(0,0,0,0.7); }
+            50% { opacity: 0.98; text-shadow: 0 0 8px var(--accent-glow), 2px 2px 2px rgba(0,0,0,0.7); }
+            75% { opacity: 0.99; text-shadow: 0 0 14px var(--accent-glow), 2px 2px 4px rgba(0,0,0,0.7); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .pulse {
+            animation: pulse 3s infinite ease-in-out;
+        }
+        
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section {
+                padding: 20px 15px;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            .graphic-element {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .title {
+                font-size: 2rem;
+            }
+            
+            .warning-banner {
+                padding: 15px;
+            }
+            
+            .age-warning {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="graphic-element candle-1">🕯️</div>
+    <div class="graphic-element candle-2">🕯️</div>
+    <div class="graphic-element spider-1">🕷️</div>
+    <div class="graphic-element spider-2">🕸️</div>
+    
+    <div class="container">
+        <header>
+            <h1 class="title">Bakhtak</h1>
+            <p class="subtitle">Terms and Conditions</p>
+        </header>
+        
+        <div class="warning-banner">
+            <div class="age-warning">⚠️ 17+ AGE RESTRICTION</div>
+            <div>This horror game contains content suitable only for ages 17 and older</div>
+        </div>
+        
+        <div class="section">
+            <h2><i class="fas fa-scroll"></i> 1. Introduction</h2>
+            <p>These Terms and Conditions ("Terms") govern your use of Bakhtak, a single-player horror mobile game developed by Hassan Ali. By downloading, installing, or playing the Game, you agree to be bound by these Terms.</p>
+            
+            <p>The Game is provided free of charge (no in-app purchases) and requires an internet connection only to load advertisements via Google AdMob.</p>
+        </div>
+        
+        <div class="section">
+            <h2><i class="fas fa-check-circle"></i> 2. Acceptance of Terms</h2>
+            <p>By accessing or using the Game (for example, by playing it on your device), you accept and agree to comply with these Terms. If you do not agree with any part of these Terms, you must immediately stop using the Game.</p>
+        </div>
+        
+        <div class="section">
+            <h2><i class="fas fa-exclamation-triangle"></i> 3. Age Requirement</h2>
+            <p><span class="clause-title">Minimum Age:</span> You must be at least 17 years old to play this Game. By playing the Game, you represent and warrant that you meet this age requirement. Users under 18 should play only with parental or guardian consent (parents/guardians are responsible for any underage use).</p>
+            
+            <p><span class="clause-title">Content Warning:</span> The Game contains horror themes, jump-scares, and disturbing imagery. It is intended for mature audiences (age 17+). It is not suitable for young children or those who are easily frightened.</p>
+        </div>
+        
+        <div class="section">
+            <h2><i class="fas fa-copyright"></i> 4. Intellectual Property Rights</h2>
+            <p><span class="clause-title">Ownership:</span> All Game content – including graphics, artwork, music, code, story, and other assets – is the exclusive property of Hassan Ali and is protected by copyright, trademark, and other intellectual property laws.</p>
+            
+            <p><span class="clause-title">Restrictions:</span> You may not copy, modify, distribute, sell, or create derivative works from any part of the Game without the developer's prior written consent. All rights not expressly granted are reserved by the developer.</p>
+            
+            <div class="credit-section">
+                <h3>Third-Party Content Credits</h3>
+                <p>Some assets used in this game were created by third parties and are used under appropriate licenses:</p>
+                <ul>
+                    <li>Game assets and resources: <a href="https://meecroofficial.github.io/Bakhtak-Credits.html" target="_blank">Bakhtak Credits Page</a></li>
+                    <li>Additional resources from various creators under Creative Commons licenses</li>
+                </ul>
+                <p>All third-party content is used in compliance with their respective licenses and terms of use.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2><i class="fas fa-balance-scale"></i> 5. Limitation of Liability</h2>
+            <p><span class="clause-title">"As Is" Disclaimer:</span> The Game is provided "as is" and "as available," without any warranties or guarantees of any kind. The developer makes no promises that the Game will be error-free, secure, or available at all times. Your use of the Game is at your own risk.</p>
+            
+            <p><span class="clause-title">No Liability for Damages:</span> To the fullest extent permitted by law, the developer will not be liable for any damages or losses arising from your use of the Game. This includes, but is not limited to, any indirect, incidental, consequential, or punitive damages, loss of data, personal injury, or equipment damage that may result from gameplay or from glitches, crashes, or ad content in the Game.</p>
+        </div>
+        
+        <div class="section">
+            <h2><i class="fas fa-ad"></i> 6. Ad Content Disclaimer</h2>
+            <p>The Game displays advertisements provided by Google AdMob (a third-party ad network). These Third-Party Ads are not under the developer's control. As stated in third-party terms, such ads are served "only as a convenience" and the developer "is not responsible for any ... Third-Party Ads". The developer does not endorse or guarantee any products or content shown in these ads, and any interaction with third-party ads is at your own risk.</p>
+        </div>
+        
+        <div class="section">
+            <h2><i class="fas fa-shield-alt"></i> 7. Privacy Policy Reference</h2>
+            <p><span class="clause-title">Privacy Policy Link:</span> Our Privacy Policy explains what data, if any, is collected and how it is used. By using the Game, you consent to our data practices as described in that policy.</p>
+            
+            <p><span class="clause-title">Third-Party Data:</span> The Game itself collects no personal information except what is required to serve ads (e.g. device/ad identifiers). As required by Google Play for apps with AdMob, we include a link to a valid Privacy Policy in our store listing and within the app.</p>
+        </div>
+        
+        <div class="section">
+            <h2><i class="fas fa-exchange-alt"></i> 8. Changes to These Terms</h2>
+            <p><span class="clause-title">Right to Update:</span> The developer reserves the right to update or modify these Terms at any time. Material changes will be announced (for example, via a notice on the app or in the store listing).</p>
+            
+            <p><span class="clause-title">Effect of Changes:</span> Your continued use of the Game after any changes become effective will constitute your acceptance of the new Terms.</p>
+        </div>
+        
+        <div class="acceptance-box pulse">
+            <h3><i class="fas fa-exclamation-circle"></i> Acceptance of Terms</h3>
+            <p>By playing Bakhtak, you acknowledge that you have read, understood, and agree to these Terms and Conditions.</p>
+        </div>
+        
+        <div class="contact-info">
+            <h2><i class="fas fa-envelope"></i> 9. Contact Information</h2>
+            <p>For any questions, concerns, or legal notices regarding these Terms or the Game, please contact Hassan Ali at <a href="mailto:c.g.s.hassan.ali@gmail.com">c.g.s.hassan.ali@gmail.com</a>.</p>
+            <p>We will make reasonable efforts to respond to inquiries in a timely manner.</p>
+        </div>
+        
+        <div class="last-updated">
+            <p>Last updated: August 28, 2025</p>
+            <div class="update-note">
+                <p>We may update these Terms from time to time. Please check back periodically for any changes.</p>
+            </div>
+        </div>
+        
+        <div class="credits">
+            <p>Some content in these Terms and Conditions was adapted from online sources.</p>
+            <p>Credits: <a href="https://meecroofficial.github.io/Bakhtak-Credits.html" target="_blank">Bakhtak Credits Page</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Add subtle interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section');
+            
+            sections.forEach(section => {
+                section.addEventListener('mouseenter', () => {
+                    section.style.transform = 'translateY(-5px)';
+                    section.style.boxShadow = '0 8px 20px rgba(0, 0, 0, 0.4)';
+                });
+                
+                section.addEventListener('mouseleave', () => {
+                    section.style.transform = 'translateY(0)';
+                    section.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.3)';
+                });
+            });
+            
+            // Add a subtle pulsating effect to the warning banner
+            const warningBanner = document.querySelector('.warning-banner');
+            setInterval(() => {
+                const glowIntensity = 0.4 + (Math.random() * 0.1);
+                warningBanner.style.boxShadow = `0 0 15px rgba(142, 68, 173, ${glowIntensity})`;
+            }, 2000);
+            
+            // Add animation to graphics on scroll
+            const graphics = document.querySelectorAll('.graphic-element');
+            
+            function checkScroll() {
+                graphics.forEach(graphic => {
+                    const position = graphic.getBoundingClientRect();
+                    
+                    // If graphic is in viewport
+                    if(position.top < window.innerHeight && position.bottom >= 0) {
+                        graphic.style.opacity = '0.07';
+                        graphic.style.transition = 'opacity 1s ease';
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', checkScroll);
+            checkScroll(); // Initial check
+        });
+    </script>
+</body>
+</html>
