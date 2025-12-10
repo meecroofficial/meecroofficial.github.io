@@ -1,0 +1,50 @@
+Privacy Policy – SEOlyzer Last Updated: December 2025
+
+SEOlyzer is developed and maintained by a single independent developer.
+This privacy policy explains how SEOlyzer handles your data.
+
+1.  Overview SEOlyzer is an SEO tool for website owners and bloggers.
+    The app provides features such as keyword explorer, title and
+    description analyzer, SEO checker, competitor analysis, rank
+    tracker, backlink checker, XML sitemap generator and robots txt
+    generator.
+
+I respect your privacy. The app is designed to collect the minimum
+amount of data possible.
+
+2.  No Account No Personal Information SEOlyzer does not require a login
+    does not create accounts and does not ask for any personal
+    information. The app does not store or upload any user data to my
+    servers.
+
+3.  Local Processing All SEO calculations inside the app including
+    keyword volume estimation keyword competition score and on page SEO
+    checks are processed locally on your device. Nothing is uploaded or
+    sent to any server for these calculations.
+
+4.  Permissions Used SEOlyzer uses only one permission which is storage
+    permission. This is used only to save or download user generated
+    files such as XML sitemaps robots txt files and SEO reports. No
+    other files on your device are accessed collected or uploaded.
+
+5.  Advertising SEOlyzer contains ads. Advertising partners may collect
+    anonymous identifiers such as device ID for ads approximate location
+    and ad interaction data. This data is handled by the ad network not
+    by me. I do not receive or store any of this information.
+
+6.  No Data Sharing I do not sell any data. I do not share personal data
+    with anyone. I do not transfer data to any third party. All data
+    stays on your device.
+
+7.  Children Privacy SEOlyzer does not knowingly collect data from
+    children. Since no personal information is collected the app is safe
+    for all ages.
+
+8.  Security SEOlyzer processes everything locally. No data leaves your
+    device unless you export a file yourself.
+
+9.  Changes to This Policy I may update this policy if new features are
+    added in the future. Changes will be reflected in the app or on the
+    app store listing.
+
+10. Contact Developer Hassan Ali Email c.g.s.hassan.ali@gmail.com
