@@ -1,0 +1,32 @@
+Privacy Policy for Sharpify AI
+
+Last Updated: 2025-12-12
+
+Sharpify AI (“the App”) respects your privacy. This Privacy Policy explains how we handle your data when you use our image enhancement and upscaling tools.
+
+1. Information We Collect
+- The App does NOT collect, store, share, or transmit any personal data.
+- All image processing is performed locally on your device.
+- No images, metadata, or device information leave your device.
+- We do not create accounts, track users, or use analytics.
+
+2. Image Processing
+- Images selected for enhancement or upscaling remain entirely offline.
+- We do not upload your images to any server or third‑party service.
+- You retain full ownership of your images.
+
+3. Advertising
+- The App uses Google AdMob to display ads. AdMob may collect device identifiers for ad personalization as per their policies.
+- We do not have access to or store any data collected by Google.
+- You may opt out of personalized ads through Google’s device settings.
+
+4. Children’s Privacy
+- Our App is not directed to children under 13.
+- We do not knowingly collect any data from children.
+
+5. Policy Updates
+- We may update this Privacy Policy from time to time.
+- Updates will be reflected in this document with a new “Last Updated” date.
+
+6. Contact
+If you have questions, contact us at: c.g.s.hassan@gmail.com
