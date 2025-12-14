@@ -1,0 +1,42 @@
+Privacy Policy for WhatsAppify – Direct Chat Tool
+
+Last updated: December 2025
+
+WhatsAppify ("we", "our", or "us") respects your privacy. This Privacy Policy explains how our Android application, WhatsAppify – Direct Chat Tool ("the App"), handles user information.
+
+1. Information We Collect
+WhatsAppify does not collect, store, or require any personally identifiable information such as names, email addresses, phone numbers, or contact lists. The app does not require user accounts, registration, or login.
+
+2. Phone Numbers and Message Content
+Any phone numbers or message text entered by the user are used only to open a WhatsApp chat using official WhatsApp intent mechanisms. This information is processed locally on the user's device and is not stored, transmitted, uploaded, or shared with us or any third party.
+
+3. Local Data Storage
+The App may store limited data locally on the user's device, such as recent chat history or user preferences, solely to improve user experience. This data never leaves the device and can be cleared at any time by clearing the app data or uninstalling the app.
+
+4. Permissions
+WhatsAppify requests only the minimum permissions required for core functionality. The App does not access contacts, call logs, messages, photos, or media files without explicit user action.
+
+5. Third-Party Services and Advertising
+WhatsAppify uses Google AdMob to display advertisements. AdMob may collect limited, non-personal information such as device identifiers, advertising IDs, and usage data in order to provide and improve ads. This data is collected and processed in accordance with Google's Privacy Policy.
+
+We do not control or have access to the data collected by AdMob.
+
+6. Data Sharing
+We do not sell, trade, or share user data with any third parties. No personal data is transferred to external servers.
+
+7. Children's Privacy
+The App is not intended for children under the age of 13. We do not knowingly collect any personal data from children. If you believe that a child has provided personal information, please contact us so we can take appropriate action.
+
+8. Data Security
+Since WhatsAppify does not collect or store personal data on servers, there is no risk of server-side data breaches. All processing occurs locally on the user's device.
+
+9. Policy Updates
+We may update this Privacy Policy from time to time. Any changes will be reflected within the app or on the app’s Play Store listing. Continued use of the App indicates acceptance of the updated policy.
+
+10. Disclaimer
+WhatsAppify is an independent utility application and is not affiliated with, endorsed by, or sponsored by WhatsApp Inc. WhatsApp is a registered trademark of Meta Platforms, Inc.
+
+11. Contact Information
+If you have any questions or concerns regarding this Privacy Policy, you may contact us at:
+
+Email: support@example.com
