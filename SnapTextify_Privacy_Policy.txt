@@ -1,0 +1,72 @@
+
+Privacy Policy for SnapTextify
+
+Last updated: December 2025
+
+SnapTextify ("we", "our", or "us") respects your privacy and is committed to protecting it. This Privacy Policy explains how our Android application SnapTextify collects, uses, and safeguards information when you use the app.
+
+1. Information We Collect
+SnapTextify does NOT collect, store, or share any personal user data.
+
+The app processes images and screenshots locally on your device to extract text. Images are never uploaded to our servers.
+
+We do not collect:
+- Personal information (name, email, phone number)
+- Photos or media files
+- Contacts
+- Location data
+- Device identifiers
+
+2. Image and Text Processing
+All image-to-text (OCR) processing is performed locally on your device. Extracted text remains on your device unless you choose to copy or share it manually.
+
+We do not:
+- Save images or extracted text
+- Upload content to any cloud server
+- Access your files without permission
+
+3. Permissions Used
+SnapTextify may request the following permissions:
+- Storage / Media Access: To allow you to select images or screenshots for text extraction.
+- Camera (optional): If you choose to capture images directly from the app.
+
+These permissions are used strictly for core app functionality.
+
+4. Advertising
+SnapTextify displays advertisements using Google AdMob.
+
+AdMob may collect limited non-personal data such as:
+- Device type
+- Advertising ID
+- General usage data
+
+This data is handled by Google in accordance with their Privacy Policy:
+https://policies.google.com/privacy
+
+We do not have access to or control over the data collected by AdMob.
+
+5. Data Sharing
+We do not sell, trade, or share any user data with third parties.
+No personal or sensitive data is transmitted from the app.
+
+6. Data Security
+Because SnapTextify does not store or transmit user data, the risk of data exposure is minimal. All processing happens locally on your device.
+
+7. Children’s Privacy
+SnapTextify is not intended for children under the age of 13. We do not knowingly collect any personal information from children.
+
+8. User Control
+You are in full control of your data:
+- You choose which images to process
+- You decide whether to copy or share extracted text
+- You may uninstall the app at any time
+
+9. Changes to This Privacy Policy
+We may update this Privacy Policy from time to time. Any changes will be reflected in the app or on the Play Store listing.
+
+10. Contact Us
+If you have any questions or concerns about this Privacy Policy, please contact us at:
+
+Email: support@snaptextify.app
+
+By using SnapTextify, you agree to this Privacy Policy.
